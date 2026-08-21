@@ -1,0 +1,385 @@
+<title>Corporate Access Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --ground:#F7F8FA; --surface:#FFFFFF; --surface2:#F0F2F6;
+  --ink:#14171C; --muted:#5A6270; --line:#E1E5EB;
+  --accent:#1E4E8C; --accent-soft:#E8EFF8;
+  --pass:#166F4A; --pass-bg:#E4F2EA;
+  --fail:#A62119; --fail-bg:#FAE7E5;
+  --warn:#8A6100; --warn-bg:#FBF0DA;
+  --ob:#1E4E8C; --ob-bg:#E8EFF8;
+  --rt:#6B4E9E; --rt-bg:#EFE9F7;
+  --nx:#5A6270; --nx-bg:#ECEEF2;
+  --shadow:0 1px 2px rgba(16,24,40,.06),0 1px 3px rgba(16,24,40,.04);
+  --sans:"IBM Plex Sans",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --ground:#0E1116; --surface:#161A21; --surface2:#1D222B;
+  --ink:#E4E8EE; --muted:#8E96A5; --line:#252B34;
+  --accent:#6BA3E8; --accent-soft:#16253A;
+  --pass:#4CAF7D; --pass-bg:#12291F;
+  --fail:#E0776C; --fail-bg:#2E1714;
+  --warn:#D6A43C; --warn-bg:#2B2110;
+  --ob:#6BA3E8; --ob-bg:#16253A;
+  --rt:#B49AE0; --rt-bg:#221A33;
+  --nx:#8E96A5; --nx-bg:#1D222B;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}}
+:root[data-theme="dark"]{
+  --ground:#0E1116; --surface:#161A21; --surface2:#1D222B;
+  --ink:#E4E8EE; --muted:#8E96A5; --line:#252B34;
+  --accent:#6BA3E8; --accent-soft:#16253A;
+  --pass:#4CAF7D; --pass-bg:#12291F;
+  --fail:#E0776C; --fail-bg:#2E1714;
+  --warn:#D6A43C; --warn-bg:#2B2110;
+  --ob:#6BA3E8; --ob-bg:#16253A;
+  --rt:#B49AE0; --rt-bg:#221A33;
+  --nx:#8E96A5; --nx-bg:#1D222B;
+  --shadow:0 1px 2px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1080px;margin:0 auto;padding:40px 24px 72px;display:flex;flex-direction:column;gap:36px}
+h1{font-size:28px;font-weight:600;letter-spacing:-.02em;margin:0;text-wrap:balance}
+h2{font-size:17px;font-weight:600;letter-spacing:-.01em;margin:0}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.lede{color:var(--muted);max-width:64ch;margin:10px 0 0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;
+  box-shadow:var(--shadow);overflow:hidden}
+.card-hd{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:16px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.card-hd p{margin:0;color:var(--muted);font-size:13px}
+
+/* diagnostics */
+.checks{display:grid;grid-template-columns:1fr;gap:0}
+.check{display:grid;grid-template-columns:104px 1fr auto;gap:14px;align-items:start;
+  padding:11px 20px;border-bottom:1px solid var(--line)}
+.check:last-child{border-bottom:0}
+.chip{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;padding:3px 9px;border-radius:4px;text-align:center;white-space:nowrap}
+.chip.pass{color:var(--pass);background:var(--pass-bg)}
+.chip.fail{color:var(--fail);background:var(--fail-bg)}
+.chip.warn{color:var(--warn);background:var(--warn-bg)}
+.chip.wait{color:var(--muted);background:var(--surface2)}
+.check-name{font-weight:500}
+.check-why{color:var(--muted);font-size:13px;margin-top:1px}
+.check-val{font-family:var(--mono);font-size:12px;color:var(--muted);
+  text-align:right;max-width:34ch;overflow-wrap:anywhere}
+.actions{display:flex;gap:10px;padding:16px 20px;border-top:1px solid var(--line);
+  background:var(--surface2);flex-wrap:wrap;align-items:center}
+button{font:inherit;font-size:13px;font-weight:500;padding:7px 14px;border-radius:7px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+button:hover{border-color:var(--accent);color:var(--accent)}
+button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+button.primary:hover{opacity:.9;color:#fff}
+button:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.hint{color:var(--muted);font-size:13px}
+
+/* register */
+.toolbar{display:flex;gap:8px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap;align-items:center}
+.tab{font-family:var(--sans);font-size:13px;font-weight:600;padding:6px 14px;border-radius:7px;
+  border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+select{font:inherit;font-size:13px;padding:6px 10px;border-radius:7px;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink);max-width:220px}
+.count{margin-left:auto;font-family:var(--mono);font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row{border-bottom:1px solid var(--line)}
+.row:last-child{border-bottom:0}
+.row-hd{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:start;
+  padding:14px 20px;cursor:pointer;background:none;border:0;width:100%;text-align:left;color:inherit}
+.row-hd:hover{background:var(--surface2)}
+.bar{width:3px;align-self:stretch;border-radius:2px;min-height:38px}
+.bar.Obligation{background:var(--ob)} .bar.Right{background:var(--rt)} .bar.Notours{background:var(--nx)}
+.cite{font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-bottom:3px}
+.sum{font-size:14px}
+.meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:7px}
+.tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;padding:2px 7px;
+  border-radius:4px;background:var(--surface2);color:var(--muted);white-space:nowrap}
+.tag.k{background:var(--warn-bg);color:var(--warn);font-weight:600}
+.tag.b{background:var(--ob-bg);color:var(--ob);font-weight:600}
+.tag.r{background:var(--rt-bg);color:var(--rt);font-weight:600}
+.tag.n{background:var(--nx-bg);color:var(--nx);font-weight:600}
+.caret{color:var(--muted);font-family:var(--mono);font-size:13px;padding-top:2px}
+.detail{padding:0 20px 20px 37px;display:grid;gap:16px}
+.detail h4{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+.extract{font-size:13.5px;line-height:1.62;background:var(--surface2);border-left:2px solid var(--line);
+  padding:12px 14px;border-radius:0 6px 6px 0;max-height:220px;overflow-y:auto}
+.note{font-size:13.5px;color:var(--muted)}
+.ctrl{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+input[type=text]{font:inherit;font-size:13px;padding:6px 10px;border-radius:7px;
+  border:1px solid var(--line);background:var(--surface);color:var(--ink);min-width:180px}
+.saved{font-family:var(--mono);font-size:11.5px;color:var(--pass)}
+footer{color:var(--muted);font-size:13px;max-width:64ch}
+code{font-family:var(--mono);font-size:.92em;background:var(--surface2);padding:1px 5px;border-radius:4px}
+@media (max-width:640px){
+  .check{grid-template-columns:88px 1fr;gap:10px}
+  .check-val{grid-column:1/-1;text-align:left;max-width:none}
+  .row-hd{grid-template-columns:auto 1fr}
+  .caret{display:none}
+  .detail{padding-left:20px}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="wrap">
+
+<header>
+  <p class="eyebrow">CCP Rulebook Register &middot; transport check</p>
+  <h1>Can your work machine open this?</h1>
+  <p class="lede">This is a scaled-down version of the finished register — 30 real rules from
+  the CME Security Clearing rulebook. If everything below reads green on your corporate browser,
+  the full seven-book version will work the same way. Nothing here is installed, downloaded,
+  or sent anywhere.</p>
+</header>
+
+<section class="card">
+  <div class="card-hd">
+    <h2>Environment check</h2>
+    <p>Runs automatically when the page opens</p>
+  </div>
+  <div class="checks" id="checks"></div>
+  <div class="actions">
+    <button class="primary" id="copyDiag">Copy results</button>
+    <button id="rerun">Run again</button>
+    <span class="hint" id="copyHint">Paste them back into the chat and I&rsquo;ll read what passed.</span>
+  </div>
+</section>
+
+<section class="card">
+  <div class="card-hd">
+    <h2>Register preview</h2>
+    <p>Three categories, not nine — the simplification you asked for</p>
+  </div>
+  <div class="toolbar" role="tablist">
+    <button class="tab" role="tab" data-b="Obligation" aria-selected="true">Obligations</button>
+    <button class="tab" role="tab" data-b="Right" aria-selected="false">Rights</button>
+    <button class="tab" role="tab" data-b="Not ours" aria-selected="false">Context</button>
+    <select id="theme"><option value="">All themes</option></select>
+    <select id="stage"><option value="">All stages</option></select>
+    <span class="count" id="count"></span>
+  </div>
+  <div id="list"></div>
+</section>
+
+<footer>
+  <p><strong>What I need to know:</strong> whether this page opened at all, and whether the
+  storage line reads green. Storage is what lets you type control references straight into the
+  page and have them still be there tomorrow. If it fails, everything else still works — you just
+  copy your notes out instead of the page remembering them.</p>
+</footer>
+
+</div>
+
+<script>
+const DATA = [{"id": "CME_SC-00007", "chapter": "Ch.2. ELIGIBLE SECURITIES TRANSACTIONS", "rule": "Rule 202. Eligible Secondary Market Transactions > b", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Ongoing", "theme": "Settlement & payment", "strength": "Hard", "trigger": "On event", "summary": "Every Member that is a counterparty to an eligible secondary market transaction must clear it, either here or at another SEC-registered covered clearing agency.", "notes": "Mandatory clearing duty. Every eligible secondary market transaction must be submitted to CME or another SEC-registered covered clearing agency.", "text": "Required Clearing. Each Member who is a counterparty to an Eligible Securities Transaction that is an Eligible Secondary Market Transaction must submit that transaction for clearance and settlement to either the Corporation or another clearing agency registered with the SEC that is a covered clearing agency."}, {"id": "CME_SC-00018", "chapter": "Ch.3. QUALIFICATION FOR MEMBER OR USER ACCESS", "rule": "Rule 303. Application Process > c", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Ongoing", "theme": "Risk & governance", "strength": "Hard", "trigger": "On event", "summary": "Before nominating any User, a Member must do reasonable due diligence on that User's credit, liquidity, and operational capacity.", "notes": "LIVE DUTY: due diligence on every User's credit, liquidity and operational capacity before nominating them. Recurs each time we nominate a User.", "text": "Member Due Diligence of Authorized Users. Before nominating any person as a User, a Member must conduct reasonable due diligence on such User’s credit and liquidity profile and operational capabilities regarding the User’s ability to fund its obligations to the Corporation and, if applicable, to the Member."}, {"id": "CME_SC-00033", "chapter": "Ch.3. QUALIFICATION FOR MEMBER OR USER ACCESS", "rule": "Rule 306. Financial, Operational, and Other Requirements for Member Applicants > b", "bucket": "Obligation", "detail": "Condition", "applies": "All Members", "stage": "Continuing eligibility", "theme": "Financial resources", "strength": "Hard", "trigger": "Continuous", "summary": "Sets minimum capital/net-asset thresholds by Member type (e.g., broker-dealer $20mm net capital; bank $500mm CET1; FCM $20mm adjusted net capital; unregistered pool $150mm net assets).", "notes": "KEY: capital floors by member type - broker-dealer $20m net capital, bank $500m CET1, FCM $20m adjusted net capital, unregistered pool $150m net assets. Continuing under Rule 309(a).", "text": "Minimum Financial Responsibility Standards for Members. Members must meet the following standards, as applicable: (i) Broker-Dealers. A broker-dealer applicant shall have at least twenty million dollars ($20,000,000) in net capital, as defined in SEC Rule 15c3-1 under the Securities Exchange Act, provided that such amount is greater than its minimum capital requirement thereunder and, in the case of a broker-dealer dually registered as a futures commission merchant under the Commodity Exchange Act, greater than the amount of adjusted net capital required under CFTC Regulation 1.17 under the Commodity Exchange Act. (ii) Banks. A bank applicant shall have at least five hundred million dollars ($500,000,000) in common equity tier 1 (“CET1”) capital, as defined by the bank’s primary regulator, or for non-U.S. banks, the foreign regulatory equivalent of the CET1 measure, and meet applicable regulatory standards with respect to leverage and capital ratios. (iii) Non-Broker-Dealer Futures Commission Merchants. A futures commission merchant that is not dually registered as a broker-dealer under the Securities Exchange Act shall have at least twenty million dollars ($20,000,000) in adjusted net capital, as defined in CFTC Regulation 1.17 under the Commodity Exchange Act, provided that such amount is greater than the amount of adjusted net capital required thereunder. (iv) Unregistered I"}, {"id": "CME_SC-00044", "chapter": "Ch.3. QUALIFICATION FOR MEMBER OR USER ACCESS", "rule": "Rule 309. Ongoing Financial and Operational Requirements > a", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Continuing eligibility", "theme": "Operational & systems", "strength": "Hard", "trigger": "Periodic", "summary": "Rule 306 requirements are continuing for Members (and Rule 307 for Users); Members must keep enforcing and updating their policies.", "notes": "KEY: this is the rule that converts the Rule 306/307 application criteria into continuing requirements. Requires maintaining, enforcing and periodically reviewing the policies.", "text": "Ongoing Compliance with Rule 306 and 307 Requirements. The requirements set forth in Rule 306 shall be continuing requirements for Members and the requirements of Rule 307 shall be continuing requirements for Users. Each Member and User shall maintain and enforce the policies and procedures it is required to have under Rule 306(c) or Rule 307(b), respectively, or other Rules, as applicable, and must periodically review, and as necessary or appropriate revise, such policies and procedures and must otherwise comply with any applicable ongoing standards of financial responsibility, operational capability, and experience and competence that the Corporation shall establish, as it deems necessary or appropriate, with respect to such Participant type."}, {"id": "CME_SC-00053", "chapter": "Ch.3. QUALIFICATION FOR MEMBER OR USER ACCESS", "rule": "Rule 311. Notice of Material Changes or Changes to User Authorization, Member Status, or User Status > c", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Event-driven", "theme": "Reporting & notification", "strength": "Hard", "trigger": "On event", "summary": "Each Member must immediately alert the Corporation to financial difficulty, capital shortfalls, or early-warning triggers (with type-specific thresholds), by phone and in writing.", "notes": "HIGH RISK: immediate notification, confirmed in writing, of financial difficulty, capital shortfalls or early-warning triggers, with type-specific thresholds.", "text": "Financial Standards Warning Notice. Each Member shall notify the Corporation immediately and shall promptly confirm such notice in writing if the Member notifies, is required to notify, or receives notice from, any regulatory organization of any financial difficulty affecting the Member, or of any failure by the Member to be in compliance with the financial responsibility rules or capital requirements of any regulatory organization. (i) Any notice, whether written or otherwise, from a regulatory organization informing a Member that it may fail to be in compliance with the financial responsibility rules or capital requirements of the regulatory organization unless it takes corrective action, or informing it that it has triggered any provision in the nature of an early warning provision contained in any such rule or regulation, constitutes a notice for purposes of Rule 311(c). (ii) For broker-dealer Members, a Member must notify the Corporation immediately by telephone and shall promptly confirm such notice in writing if: (A) such Member’s net capital becomes less than the greater of twenty million dollars ($20,000,000) or the minimum required by its primary regulator or if net capital declines by greater than 20% of the aggregate principal amount of such Member’s satisfactory subordination agreements (other than such agreements which qualify as equity capital pursuant to Rule 15"}, {"id": "CME_SC-00059", "chapter": "Ch.3. QUALIFICATION FOR MEMBER OR USER ACCESS", "rule": "Rule 313. Disaster Recovery and Business Continuity > a", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Continuing eligibility", "theme": "Operational & systems", "strength": "Hard", "trigger": "Continuous", "summary": "Each Participant must maintain written disaster-recovery and business-continuity policies to keep operating through disruptions.", "notes": "Written DR and BCP policies designed to keep operating through a significant internal or external disruption.", "text": "Need for Procedures. Each Participant shall maintain written disaster recovery and business continuity policies and procedures designed to ensure their ability to continue performing operational functions notwithstanding the occurrence of a significant internal or external disruption."}, {"id": "CME_SC-00062", "chapter": "Ch.3. QUALIFICATION FOR MEMBER OR USER ACCESS", "rule": "Rule 315. Anti-Money Laundering Compliance Program", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Continuing eligibility", "theme": "Legal & regulatory", "strength": "Hard", "trigger": "Continuous", "summary": "Each Member/User must build and run a written AML/KYC/sanctions compliance program (BSA, IEEPA, TWEA, FATCA, etc.), approved by senior management.", "notes": "KEY: written AML / KYC / sanctions programme approved in writing by senior management, covering BSA, IEEPA, TWEA and FATCA.", "text": "Each Member and User, as applicable, shall develop and implement a written compliance program approved in writing by senior management reasonably designed to achieve and monitor such Member’s or User’s compliance with, as applicable, (1) anti-money laundering, know-your-customer, and sanctions requirements, including the Bank Secrecy Act (31 U.S.C. § 5311 et seq.), the International Emergency Economic Powers Act (50 U.S.C. § 1701 et seq.) (“IEEPA”), the Trading with the Enemy Act (50 U.S.C. App. § 1 et seq.) (“TWEA”), and the executive orders and regulations issued pursuant thereto, including the regulations issued by the Department of the Treasury and, as applicable, the CFTC; and (2) the Foreign Account Tax Compliance Act (26 U.S.C. § 1471 et seq.) and the executive orders and regulations issued pursuant thereto."}, {"id": "CME_SC-00066", "chapter": "Ch.4. GUARANTY FUND AND DEFAULT MANAGEMENT", "rule": "Rule 402. Amount of Contributions > b", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Continuing eligibility", "theme": "Guaranty fund", "strength": "Hard", "trigger": "Periodic", "summary": "Each Member must post a Required Guaranty Fund Contribution - the greater of $10mm or its risk-based share - before clearing and as recalculated.", "notes": "KEY: Required Guaranty Fund Contribution, risk-based on our proprietary transactions plus those of Users we authorise. Must be received before we may clear.", "text": "Member Contribution. Each Member shall make a Required Guaranty Fund Contribution. The Corporation must receive a new Member’s initial Required Guaranty Fund Contribution before such Member is eligible to commence clearing any Eligible Securities Transactions with the Corporation. The Corporation shall determine each Member’s Required Guaranty Fund Contribution using fair and risk-based measures. Specifically, a Member’s Required Guaranty Fund Contribution will be sized based on the Member’s proprietary transactions and transactions of Users authorized by the Member. The Required Guaranty Fund Contribution, as adjusted from time to time, shall consist of the greater of: (i) ten million dollars ($10,000,000), which is the minimum amount of cash or securities that a Member is required to contribute to the Guaranty Fund; or (ii) the amount a Member is required to contribute to the Guaranty Fund based on the Member’s proportionate share of the aggregate Required Guaranty Fund Contribution, considering its proprietary transactions and transactions of Users authorized by the Member and calculated by the Corporation in accordance with formulae adopted by the Corporation from time to time. Prior to a Member commencing to use a Clearing Service, its proportionate share of the aggregate Required Guaranty Fund Contribution for such Clearing Service is zero. The Corporation will calculate "}, {"id": "CME_SC-00067", "chapter": "Ch.4. GUARANTY FUND AND DEFAULT MANAGEMENT", "rule": "Rule 402. Amount of Contributions > c", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Event-driven", "theme": "Guaranty fund", "strength": "Conditional", "trigger": "On demand", "summary": "If a Member Default overwhelms available funds, the Corporation can levy Default Assessments; each surviving Member must pay its share (capped at 200% of its contribution) by the Fedwire deadline.", "notes": "HIGH RISK: Default Assessment triggered where losses exceed 50% of available funds. Our share is capped at 200% of our contribution and is payable by the Fedwire deadline.", "text": "Default Assessment. (i) If the sum of the Corporation’s losses or liabilities arising from a Member Default exceeds 50% of the amount of funds available to the Corporation for discharging such losses and liabilities pursuant to Rules 406(a)(ii)-(iv), the Corporation may, in its sole discretion, impose a Default Assessment. That is, the Corporation may issue an advance demand to non-Defaulting Members to satisfy Default Assessments up to the amount that would be necessary to discharge losses and liabilities arising from a Member’s Default. (ii) Each non-Defaulting Member shall be assigned its proportionate share of the total Default Assessment amount based on each Member’s Required Guaranty Fund Contribution. The maximum Default Assessment for each Member with respect to each Cooling Off Period will equal two-hundred (200) percent of the Member’s Required Guaranty Fund Contribution then in effect at the commencement of the Cooling Off Period. (iii) Any Member that does not satisfy a Default Assessment may be declared to be in Default by the Corporation pursuant to Rule 902. (iv) The Default Assessment for each Member shall be calculated by the Corporation and reported to the individual Members in the Guaranty Fund statement, as set forth in Rule 402(d). During the hours in which the Federal Reserve’s wire transfer system (“Fedwire”) is in operation, non-Defaulting Members must p"}, {"id": "CME_SC-00087", "chapter": "Ch.4. GUARANTY FUND AND DEFAULT MANAGEMENT", "rule": "Rule 406. Use and Application of Guaranty Fund, Margin and Other Financial Resources > e", "bucket": "Obligation", "detail": "Prohibition", "applies": "Members and Users", "stage": "Event-driven", "theme": "Default management", "strength": "Hard", "trigger": "Continuous", "summary": "No Member/User may take action (including court orders) to block the Corporation from applying assets in a default.", "notes": "KEY PROHIBITION: no action, expressly including obtaining a court order, that would interfere with the Corporation applying our assets under Rule 406.", "text": "No Interfering Action. No Member or User shall take any action, including but not limited to obtaining a court order, that would interfere with the ability of the Corporation to apply a Member’s or User’s assets and funds in accordance with this Rule 406."}, {"id": "CME_SC-00097", "chapter": "Ch.4. GUARANTY FUND AND DEFAULT MANAGEMENT", "rule": "Rule 410. Capped Liquidity Facility > d", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Event-driven", "theme": "Default management", "strength": "Conditional", "trigger": "On event", "summary": "On notice of a CLF Event, a Member must enter CLF transactions up to its cap, becoming a cash lender to the Corporation.", "notes": "KEY HIGH RISK: on notice we must enter CLF Event Transactions up to our pre-specified cap, becoming a cash lender to the Corporation so it can meet its funding obligations.", "text": "Upon notice from the Corporation as set out in Rule 410(a), a Member must enter into a CLF Event Transaction(s) with the Corporation up to a pre-specified maximum amount under which the Member becomes a cash lender to the Corporation to allow the Corporation to meet its funding obligations. The Corporation will inform each Member selected to participate in a CLF Event Transaction of the amount, rate and any additional pertinent information."}, {"id": "CME_SC-00103", "chapter": "Ch.4. GUARANTY FUND AND DEFAULT MANAGEMENT", "rule": "Rule 410. Capped Liquidity Facility > j", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Ongoing", "theme": "Default management", "strength": "Hard", "trigger": "Periodic", "summary": "At least annually, each Member must attest it understands and is ready to meet its CLF obligations, and provide any required acknowledgments.", "notes": "KEY: annual attestation by an authorised representative confirming we understand the CLF obligations and have built our Allocated Capped CLF Amount into ongoing liquidity planning.", "text": "Required Attestation and Acknowledgment. (i) On at least an annual basis, an authorized representative, as designated pursuant to Rule 312, of each Member shall satisfactorily complete an attestation declaring the Member understands and acknowledges to be bound, by the Corporation’s Rules with respect to CLF, the Corporation’s use of such Member’s Allocated Capped CLF Amount and associated obligations, and that such Member has suitably incorporated that individual Member’s Allocated Capped CLF Amount into their ongoing liquidity planning in order to be prepared to meet their obligation as may be required. Each Member must complete the aforementioned attestation within the period prescribed by the Corporation. (ii) From time to time the Corporation may require acknowledgements by Members, including, but not limited to, acknowledgement that they have been informed of a change to their Allocated Capped CLF Amount, a declaration that they are prepared to enter into a CLF Event Transaction up to the full amount of Allocated Capped CLF Amount if instructed to do so by the Corporation following the declaration of a CLF Event, acknowledgement of the Rules in the event of a change to the authorized representative of the Member, or other acknowledgements as deemed relevant by the Corporation. Each Member must complete the aforementioned acknowledgement within the period prescribed by the"}, {"id": "CME_SC-00114", "chapter": "Ch.4. GUARANTY FUND AND DEFAULT MANAGEMENT", "rule": "Rule 413. Making Good Charges to Guaranty Fund > a", "bucket": "Obligation", "detail": "Obligation", "applies": "All Members", "stage": "Event-driven", "theme": "Guaranty fund", "strength": "Conditional", "trigger": "On demand", "summary": "If a charge drops a surviving Member below its required contribution, the Member must replenish on demand or be defaulted.", "notes": "KEY HIGH RISK: replenish any deficiency in the Required Guaranty Fund Contribution on demand, within the time the Corporation requires, or face default.", "text": "If a pro rata charge is made against a non-Defaulting Member’s Required Guaranty Fund Contribution pursuant to Rule 406, and as a consequence, a non-Defaulting Member’s remaining contribution to the Guaranty Fund is less than the non-Defaulting Member’s Required Guaranty Fund Contribution, the non-Defaulting Member shall, upon the Corporation’s demand, contribute to the Guaranty Fund, within such time as the Corporation shall require, an amount at least sufficient to eliminate the deficiency in the Required Guaranty Fund Contribution, subject to the maximum aggregate contribution set forth in Rule 413(b). If the non-Defaulting Member fails to do so, the Corporation may default such Member pursuant to Rule 902. The voluntary or involuntary cessation of membership by the Member shall not affect the obligations of the Member to the Corporation or any remedy to which the Corporation may be entitled pursuant to these Rules or applicable law."}, {"id": "CME_SC-00123", "chapter": "Ch.4. GUARANTY FUND AND DEFAULT MANAGEMENT", "rule": "Rule 417. Testing", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Ongoing", "theme": "Default management", "strength": "Conditional", "trigger": "Periodic", "summary": "The Corporation tests its default procedures at least annually; Members and Users must participate if required.", "notes": "KEY: default-procedure fire drill at least annually. Participation is mandatory if the Corporation requires it.", "text": "The Corporation shall conduct periodic testing and review of its default procedures at least annually and following material changes thereto, as required by Rule 17ad-22(e)(13) under the Securities Exchange Act. It shall conduct such testing and review in the manner it shall communicate to Members and Users through an Advisory or otherwise. If required by the Corporation, all Members and Users must participate in testing of the Corporation’s default procedures."}, {"id": "CME_SC-00145", "chapter": "Ch.5. MARGIN AND Outstanding Exposure SETTLEMENT", "rule": "Rule 508. Daily Margin Report > b", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Ongoing", "theme": "Margin & collateral", "strength": "Hard", "trigger": "Daily", "summary": "Any margin deficit shown on the report must be met by the specified time, even if the report has errors, and errors reported promptly.", "notes": "KEY HIGH RISK: pay first, dispute later. A margin deficit shown on the Daily Margin Report must be satisfied by the specified time NOTWITHSTANDING ANY ERROR in the report. Errors are reported separately and corrected on the next report.", "text": "A margin deficit of a Member or User as shown on the Daily Margin Report of a particular day shall be satisfied by the time specified by the Corporation, notwithstanding any error in such report. Any errors in the Daily Margin Report shall be reported promptly to the Corporation, and any correction or adjustment in the amount of required margin shall be shown on the next Daily Margin Report."}, {"id": "CME_SC-00149", "chapter": "Ch.5. MARGIN AND Outstanding Exposure SETTLEMENT", "rule": "Rule 509. Settlement Cycles; Additional Margin > c", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Ongoing", "theme": "Margin & collateral", "strength": "Conditional", "trigger": "On demand", "summary": "A Member (including for a Supported User) must meet an additional-margin call in immediately available funds within one hour.", "notes": "KEY HIGH RISK: additional margin must be met in IMMEDIATELY AVAILABLE FUNDS WITHIN ONE HOUR of notification, unless the Corporation specifies longer. Applies to margin for our Supported Users too.", "text": "Timing of Deposit of Additional Margin. Such Member, including a Member on behalf of a Supported User, or an Independent User shall satisfy the requirement for additional margin in immediately available funds within one (1) hour of being notified of such requirement or such other longer period of time specified by the Corporation."}, {"id": "CME_SC-00166", "chapter": "Ch.6. CLEARANCE AND SETTLEMENT SERVICES", "rule": "Rule 602. Submission of Transaction Data > c", "bucket": "Obligation", "detail": "Prohibition", "applies": "Members and Users", "stage": "Ongoing", "theme": "Legal & regulatory", "strength": "Hard", "trigger": "Continuous", "summary": "No Member/User may submit false clearing data or knowingly pay/receive amounts not tied to bona fide transactions.", "notes": "KEY PROHIBITION: no false or inaccurate transaction data, and no knowingly paying or receiving amounts not representing bona fide transactions.", "text": "False Clearing Information. In connection with Eligible Securities Transactions submitted to the Corporation for clearing, no Member or User shall provide any false or inaccurate transaction data, or knowingly pay or receive any cash or securities not representing bona fide transactions or the actual amount(s) due with respect to such transactions."}, {"id": "CME_SC-00222", "chapter": "Ch.9. CEASING TO ACT AND OTHER RESTRICTIONS ON ACCESS TO SERVICES", "rule": "Rule 901. Ceasing to Act in Event of Insolvency > a", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Event-driven", "theme": "Reporting & notification", "strength": "Hard", "trigger": "On event", "summary": "A Member/User that cannot perform its material obligations or is insolvent must tell the Corporation immediately, same day.", "notes": "KEY HIGH RISK: written notice SAME CALENDAR DAY on failing to perform material obligations, determining we are unable to, or insolvency. One of the tightest deadlines in the book.", "text": "Member’s and User’s Obligation to Inform of Insolvency. A Member or User that (i) fails to perform its material contracts or obligations, (ii) determines that it is unable to perform its material contracts or obligations, or (iii) is insolvent, shall immediately notify the Corporation in writing via e-mail or such other system as the Corporation may designate no later than the same calendar day as the day on which the Member or User first becomes aware of its noncompliance or insolvency."}, {"id": "CME_SC-00321", "chapter": "Ch.15. INTEREST RATE SECURITIES CLEARING SERVICE", "rule": "Rule 1504. Settlement Obligations for Transactions > f", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Ongoing", "theme": "Settlement & payment", "strength": "Hard", "trigger": "Daily", "summary": "Members/Users must fund and instruct delivery of cash/securities to settle by the Corporation's deadlines (e.g., Clear-to-Deliver by 3:00pm ET, Clear-to-Hold by 6:30pm ET); fails trigger a failure notice.", "notes": "KEY HIGH RISK: fund and instruct delivery of cash and securities by CME's deadlines - Clear to Deliver by 15:00 Eastern, Clear to Hold by 18:30 Eastern. Missing them triggers a failure notice.", "text": "Settlement Procedure. (i) The Corporation shall issue standing settlement instructions to the Corporation’s Securities Settlement Bank(s) to settle Clear to Deliver Transactions submitted for T+0 settlement in real-time on a gross basis. The Corporation will instruct the Corporation’s Securities Settlement Bank(s) to effect the movement of collateral against cash upon receipt of securities from the Member’s or User’s Securities Settlement Bank, designated pursuant to Rule 604(b). The Corporation will instruct the Corporation’s Securities Settlement Bank(s) to notify the Corporation upon the settlement of any Clear to Deliver Transaction. The Corporation’s Securities Settlement Bank(s) shall issue a settlement confirmation of each Clear to Deliver Transaction in real-time to the Member and/or User that is the original counterparty on the transaction. (ii) The Corporation shall calculate settlement obligations on Clear to Deliver Transactions and Cash Treasury Transactions submitted for T+1 settlement on a net basis pursuant to Rule 1504(g). The Corporation shall issue settlement instructions to the Corporation’s Securities Settlement Bank(s) for netted Clear to Deliver Transactions and Cash Treasury Transactions scheduled for delivery on the next eligible settlement date following the deadline to submit Clear to Deliver Transactions for T+1 settlement, as permitted by the schedu"}, {"id": "CME_SC-00342", "chapter": "Ch.15. INTEREST RATE SECURITIES CLEARING SERVICE", "rule": "Rule 1507. Default Management > f", "bucket": "Obligation", "detail": "Obligation", "applies": "Members and Users", "stage": "Event-driven", "theme": "Settlement & payment", "strength": "Conditional", "trigger": "On event", "summary": "The Corporation may accelerate non-defaulting Members'/Users' repo delivery obligations to earlier dates (not for maturities of 2 days or fewer).", "notes": "KEY HIGH RISK: our repo delivery obligations can be ACCELERATED to dates earlier than original maturity where CME cannot borrow the securities or cash it needs. Not applied to repos with two business days or fewer remaining.", "text": "To meet its settlement obligations, the Corporation may engage in Paired Transactions, as set forth in Rule 407 and Rule 1508(g). Should the Corporation be unable to borrow the necessary securities or cash to complete the Paired Transaction, the Corporation may exercise its acceleration rights with respect to non-Defaulting Members and non- Defaulting Users such that their delivery obligations under outstanding Repo Transactions become due on dates earlier than the original maturity dates of such Repo Transactions. The Corporation will not exercise its acceleration rights with respect to Repo Transactions with remaining maturities of two (2) Business Days or fewer."}, {"id": "CME_SC-00347", "chapter": "Ch.15. INTEREST RATE SECURITIES CLEARING SERVICE", "rule": "Rule 1508. Competitive Auction > d", "bucket": "Right", "detail": "Right", "applies": "Members and Users", "stage": "Event-driven", "theme": "Default management", "strength": "n/a", "trigger": "On event", "summary": "Non-defaulting Members/Users may participate as bidders in auctions.", "notes": "NOTABLE: auction participation here is voluntary - non-defaulting members MAY bid. Contrast LCH, where auction participation is a hard obligation.", "text": "Each non-Defaulting Member and non-Defaulting User (each such bidding entity, a “Bidder”) may participate in the Competitive Auction(s) by submitting bids with respect to each Auction Portfolio. Bidders will submit the bids in a format deemed appropriate by the Corporation (the “Bid”)."}, {"id": "CME_SC-00229", "chapter": "Ch.9. CEASING TO ACT AND OTHER RESTRICTIONS ON ACCESS TO SERVICES", "rule": "Rule 903. Voluntary Withdrawal > a", "bucket": "Right", "detail": "Right", "applies": "Members and Users", "stage": "Termination", "theme": "Membership & eligibility", "strength": "n/a", "trigger": "On event", "summary": "A Member may withdraw with at least 10 business days' notice, effective only after satisfactory arrangements for its obligations/open trades.", "notes": "At least 10 business days' written notice. Withdrawal is not effective until CME confirms, and confirmation depends on satisfactory arrangements for our obligations and open trades.", "text": "Voluntary Withdrawal of Member or User Status. (i) Voluntary Withdrawal of Member Status. A Member may voluntarily withdraw its Member status by providing at least ten (10) Business Days’ written notice of its intended withdrawal to the Corporation (“Member Withdrawal Notice”). The Corporation may, in its sole discretion, confirm such withdrawal within a shorter notice period. The Member’s withdrawal will not be effective until confirmed by the Corporation. The Corporation’s confirmation of the Member Withdrawal Notice shall be evidenced by a notice to all Members and Users via an Advisory announcing the withdrawal of the Member and the effective date of such withdrawal (hereinafter the “Member Withdrawal Date”), and, if applicable, announcing the termination of the Member’s authorization of Users (“Former Users”) with respect to clearing transactions through the Corporation (ii) Voluntary Withdrawal of User Status. A User may voluntarily withdraw its status as a User by providing at least ten (10) Business Days’ written notice of its intended withdrawal to the User’s authorizing Member(s) and the Corporation (“User Withdrawal Notice”). The Corporation may, in its discretion, confirm such withdrawal within a shorter notice period. The User’s withdrawal will not be effective until confirmed by the Corporation. The Corporation’s confirmation of the User Withdrawal Notice shall be"}, {"id": "CME_SC-00151", "chapter": "Ch.5. MARGIN AND Outstanding Exposure SETTLEMENT", "rule": "Rule 510. Withdrawal of Margin > a", "bucket": "Right", "detail": "Right", "applies": "Members and Users", "stage": "Ongoing", "theme": "Margin & collateral", "strength": "n/a", "trigger": "On demand", "summary": "The Corporation authorizes withdrawal of excess margin on the Member's request.", "notes": "Excess margin can be withdrawn on request, subject to the Rules for the relevant transaction type.", "text": "Authorization of Withdrawal. If the amount of margin posted for the benefit of a Member, Member on behalf of a Supported User, or Independent User is in excess of the amount of initial margin required on a particular day (or a Member, Member on behalf of a Supported User, or Independent User seeks to substitute collateral deposited as margin), the Corporation shall, pursuant to the Rules applicable to specific Eligible Securities Transactions, authorize the withdrawal of the amount of the excess collateral (or collateral it seeks to withdraw for substitution purposes) upon the Member’s, Member on behalf of a Supported User’s, or Independent User’s submission to the Corporation’s system of a withdrawal request. The Corporation may permit withdrawal of such excess amount by directing its Bank to deliver it to the relevant account at the Bank of the Member or Independent User, as applicable. The Corporation shall require the Corporation’s Bank(s) releasing the applicable amounts to confirm to the Corporation via the SWIFT system, or such other system that the Corporation may designate, that the appropriate amounts have been released."}, {"id": "CME_SC-00196", "chapter": "Ch.7. CORPORATION REQUIREMENTS", "rule": "Rule 709. Release of Clearing Data > b", "bucket": "Right", "detail": "Right", "applies": "Members and Users", "stage": "Ongoing", "theme": "Confidentiality & data", "strength": "n/a", "trigger": "On demand", "summary": "The Corporation releases a Member's/User's clearing data to that party on written request (and to the authorizing Member).", "notes": "We can obtain our own Clearing Data on written request, and a User's data if we authorised that User.", "text": "Release to Member or User. Absent valid legal process or except as otherwise provided in this Rule 709 or any other Rule, the Corporation will only release Clearing Data relating to a particular Member or User to such Member or User upon its written request; provided, however, that the Corporation may release Clearing Data relating to a particular User to a Member that authorizes that User, upon written request of the authorizing Member."}, {"id": "CME_SC-00272", "chapter": "Ch.11. APPEALS", "rule": "Rule 1101. Right to Request an Appeal > c", "bucket": "Right", "detail": "Right", "applies": "Members and Users", "stage": "Event-driven", "theme": "Disputes", "strength": "n/a", "trigger": "On event", "summary": "An aggrieved party may appeal a fine of $25,000 or more.", "notes": "Appeal right only attaches to fines of $25,000 or more.", "text": "Any aggrieved party shall have the right to request an appeal to the full Board from any decision of a Hearing Panel of the Corporation: imposing a fine of $25,000 or more; or"}, {"id": "CME_SC-00338", "chapter": "Ch.15. INTEREST RATE SECURITIES CLEARING SERVICE", "rule": "Rule 1507. Default Management > b", "bucket": "Right", "detail": "Right", "applies": "All Members", "stage": "Event-driven", "theme": "Default management", "strength": "n/a", "trigger": "On event", "summary": "On a User Default, the authorizing Member may satisfy the User's obligations in full and must say so within the prescribed time.", "notes": "On a User Default we may terminate that User's obligations by satisfying them in full - but must notify our intent within the period CME prescribes.", "text": "The Corporation will notify all Members and, as appropriate, Users upon the occurrence of a Member Default or a User Default. In case of a Defaulting User, if time permits before the Corporation takes the actions described in Rule 1507(e), the Corporation will notify the authorizing Member(s) of the Defaulting User that the Member(s) may terminate the Defaulting User’s obligations to the Corporation by satisfying them in full. The Member must notify its intent to do so within a period of time prescribed by the Corporation."}, {"id": "CME_SC-00002", "chapter": "Ch.1. DEFINITIONS", "rule": "Rule 101. Definitions", "bucket": "Not ours", "detail": "Definition", "applies": "Not member-directed", "stage": "Ongoing", "theme": "Other", "strength": "n/a", "trigger": "n/a", "summary": "Defines every key term used across the rulebook (Member, User, Corporation, Repo Transaction, margin, Guaranty Fund, etc.).", "notes": "Master definitions rule. Needed to interpret the rest of the book.", "text": "Unless the context otherwise requires, for all purposes of these Rules, the terms defined in this Rule 101 shall have the meanings specified below. The term “Account” means a Member Account, Independent User Account or Supported User Account, as the context requires. The term “Advisory” means a notice to Members and/or Users. The term “Affiliate” has the meaning given to that word in Rule 405 under the Securities Act. The term “Associated Person” means, when applied in relation to any person, any partner, officer, or director of such person (or any person occupying a similar status or performing similar functions), or any person directly or indirectly controlling, controlled by or under common control with such person, including any employee of such person. The term “Authorization Agreement” means an agreement between a Member and a User under which a Member agrees to authorize the User’s access to a Clearing Service for Eligible Securities Transactions. The term “Bank” means any U.S. Federal Reserve Bank or any ‘‘bank’’ within the meaning of that term as defined in section 3(a)(6) of the Securities Exchange Act that is insured by the Federal Deposit Insurance Corporation, which is designated by the Corporation as a bank where the Corporation maintains one or more accounts in which the Corporation holds and receives assets posted to it as margin collateral and/or makes or recei"}, {"id": "CME_SC-00190", "chapter": "Ch.7. CORPORATION REQUIREMENTS", "rule": "Rule 706. Rule Changes > b", "bucket": "Not ours", "detail": "CCP Duty", "applies": "Not member-directed", "stage": "Ongoing", "theme": "Reporting & notification", "strength": "Hard", "trigger": "On event", "summary": "The Corporation promptly notifies Members/Users when it files proposed rule changes with the SEC.", "notes": "KEY FOR CHANGE MONITORING: CME must notify all Members when it files a proposed rule change with the SEC, satisfied by posting to its website within 2 business days of filing.", "text": "Notice of Proposed Rule Changes. The Corporation shall promptly notify all Members and Users when it has filed a proposed rule change, and any amendments thereto, with the SEC pursuant to the provisions of Section 19(b) of, and Rule 19b-4 under, the Securities Exchange Act. The requirements of this Rule 706(b) shall be deemed to have been satisfied if Members and Users are notified that a proposed rule change or an amendment thereto, as applicable, has been filed and that copies thereof have been posted on the Corporation’s website for inspection by interested Members or Users within two (2) Business Days of filing with the SEC. The failure of the Corporation to comply with this Rule 706 in any respect shall not affect the validity, force, or effect of any rule change or of any action taken by the Corporation pursuant thereto."}, {"id": "CME_SC-00201", "chapter": "Ch.7. CORPORATION REQUIREMENTS", "rule": "Rule 710. Emergency Resolutions > b", "bucket": "Not ours", "detail": "CCP Power", "applies": "Not member-directed", "stage": "Event-driven", "theme": "Risk & governance", "strength": "CCP discretion", "trigger": "On event", "summary": "The emergency panel can order position limits, suspension, forced liquidation, extra margin, etc.; all Member/User activity is subject to these resolutions.", "notes": "HIGH RISK: on a unanimous panel vote - immediate position limits, suspension, liquidation-only trading, forced liquidation or transfer of positions, additional initial margin, refusal of new transactions, or an imposed settlement price.", "text": "Extent of Resolutions. Such panel shall be duly authorized and, upon a unanimous vote of the panel, be empowered to order (a) an immediate position limitation, (b) an immediate suspension of the Member or User, (c) that all open trades of said Member or User be for liquidation only, (d) the liquidation or transfer of all or a portion of the open positions of the Member or User, (e) additional initial margin to be deposited with the Corporation (f) refusal to accept new transactions, (g) establishment of a settlement price regardless of the existing market price, (h) the suspension of operations or modification of hours and/or (i) any other action or combination of actions necessary to protect the financial integrity of the Corporation. All activities and operations of the Corporation, including transactions, accounts, and positions of Members and Users, are subject to the exercise of emergency resolutions."}, {"id": "CME_SC-00148", "chapter": "Ch.5. MARGIN AND Outstanding Exposure SETTLEMENT", "rule": "Rule 509. Settlement Cycles; Additional Margin > b", "bucket": "Not ours", "detail": "CCP Power", "applies": "Not member-directed", "stage": "Ongoing", "theme": "Margin & collateral", "strength": "CCP discretion", "trigger": "On demand", "summary": "The Corporation may require additional margin from any Member/User for market moves, position/valuation/financial changes, or protection.", "notes": "Additional margin may be called at any time for market moves, position size changes, valuation changes or the Corporation's protection.", "text": "Need for Additional Margin. If the market conditions or price fluctuations are such that the Corporation deems it necessary, the Corporation may, in its sole discretion, require additional margin be posted by any Member(s) or User(s) in any account by such time and in such amount and form as specified by the Corporation. The Corporation may require the additional margin be posted as the Corporation deems advisable: (i) to reflect changes in the market price during such day of any securities that are subject to repurchase; (ii) to reflect changes in the size of such Member’s or User’s positions in cleared Eligible Securities or Eligible Securities Transactions; (iii) to reflect changes in the value of securities deposited by the Member or User as margin pursuant to Rule 502; (iv) to reflect changes in the financial position of the Member or User; or (v) otherwise to protect the Corporation, other Members, other Users, or the general public."}];
+const KEY = "ccp-register-smoketest";
+
+/* ---------- diagnostics ---------- */
+const checks = [];
+function add(name, why, fn){ checks.push({name, why, fn}); }
+
+add("Page reached you","The file loaded from its host and rendered.",()=>{
+  try{ return {s:"pass", v:location.protocol.replace(":","")+" · "+(location.hostname||"local file")}; }
+  catch(e){ return {s:"pass", v:"rendered"}; }
+});
+add("Scripts allowed","Filtering and tabs need JavaScript.",()=>({s:"pass",v:"enabled"}));
+add("Persistent storage","Remembers control references between visits.",()=>{
+  try{
+    const t="__t"+Math.random();
+    localStorage.setItem(t,"1");
+    const ok = localStorage.getItem(t)==="1";
+    localStorage.removeItem(t);
+    return ok ? {s:"pass",v:"read + write OK"} : {s:"fail",v:"write ignored"};
+  }catch(e){ return {s:"fail", v:(e&&e.name)||"blocked"}; }
+});
+add("Session storage","Fallback if persistent storage is blocked.",()=>{
+  try{
+    const t="__s"+Math.random();
+    sessionStorage.setItem(t,"1");
+    const ok=sessionStorage.getItem(t)==="1";
+    sessionStorage.removeItem(t);
+    return ok?{s:"pass",v:"available"}:{s:"warn",v:"write ignored"};
+  }catch(e){ return {s:"warn", v:(e&&e.name)||"blocked"}; }
+});
+add("Copy to clipboard","Used by the export button.",()=>{
+  const has = !!(navigator.clipboard && navigator.clipboard.writeText);
+  return has?{s:"pass",v:"API present"}:{s:"warn",v:"manual copy only"};
+});
+add("Web fonts","Cosmetic only — a fallback face is fine.",()=>{
+  try{
+    const ok = document.fonts && document.fonts.check('600 15px "IBM Plex Sans"');
+    return ok?{s:"pass",v:"IBM Plex loaded"}:{s:"warn",v:"system fallback"};
+  }catch(e){ return {s:"warn", v:"not measurable"}; }
+});
+add("Data payload","All rules are inside the page — no further requests.",()=>{
+  const kb = Math.round(JSON.stringify(DATA).length/1024);
+  return {s:"pass", v:DATA.length+" rules · ~"+kb+" KB"};
+});
+add("Browser","For my reference if something renders oddly.",()=>{
+  const ua=navigator.userAgent;
+  let n="unknown";
+  if(/Edg\//.test(ua)) n="Edge";
+  else if(/Chrome\//.test(ua)) n="Chrome";
+  else if(/Firefox\//.test(ua)) n="Firefox";
+  else if(/Safari\//.test(ua)) n="Safari";
+  const m=ua.match(/(?:Edg|Chrome|Firefox|Version)\/(\d+)/);
+  return {s:"pass", v:n+(m?" "+m[1]:"")+" · "+window.innerWidth+"px"};
+});
+
+let results=[];
+function runChecks(){
+  const host=document.getElementById("checks");
+  host.textContent="";
+  results=[];
+  checks.forEach(c=>{
+    let r;
+    try{ r=c.fn(); }catch(e){ r={s:"fail",v:(e&&e.name)||"error"}; }
+    results.push({name:c.name, s:r.s, v:r.v});
+    const el=document.createElement("div");
+    el.className="check";
+    const chip=document.createElement("span");
+    chip.className="chip "+r.s;
+    chip.textContent = r.s==="pass"?"pass":r.s==="fail"?"blocked":"partial";
+    const mid=document.createElement("div");
+    const nm=document.createElement("div"); nm.className="check-name"; nm.textContent=c.name;
+    const wy=document.createElement("div"); wy.className="check-why"; wy.textContent=c.why;
+    mid.appendChild(nm); mid.appendChild(wy);
+    const val=document.createElement("div"); val.className="check-val"; val.textContent=r.v;
+    el.appendChild(chip); el.appendChild(mid); el.appendChild(val);
+    host.appendChild(el);
+  });
+}
+document.getElementById("rerun").addEventListener("click",runChecks);
+document.getElementById("copyDiag").addEventListener("click",async()=>{
+  const txt = "CCP register — corporate access check\n" +
+    results.map(r=>"["+r.s.toUpperCase()+"] "+r.name+" — "+r.v).join("\n");
+  const hint=document.getElementById("copyHint");
+  try{
+    await navigator.clipboard.writeText(txt);
+    hint.textContent="Copied. Paste it into the chat.";
+  }catch(e){
+    const ta=document.createElement("textarea");
+    ta.value=txt; ta.style.width="100%"; ta.style.height="150px"; ta.style.marginTop="10px";
+    ta.style.font="12px var(--mono)";
+    document.querySelector(".actions").appendChild(ta);
+    ta.select();
+    hint.textContent="Clipboard blocked — select the text below and copy it manually.";
+  }
+});
+
+/* ---------- register ---------- */
+let bucket="Obligation";
+const store = (()=>{
+  let mem={};
+  let ok=true;
+  try{ mem=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ ok=false; }
+  return {
+    get:id=>mem[id]||"",
+    set:(id,v)=>{ mem[id]=v; if(!ok) return false;
+      try{ localStorage.setItem(KEY,JSON.stringify(mem)); return true; }catch(e){ return false; } }
+  };
+})();
+
+const themeSel=document.getElementById("theme"), stageSel=document.getElementById("stage");
+[...new Set(DATA.map(d=>d.theme))].sort().forEach(t=>{
+  const o=document.createElement("option"); o.value=t; o.textContent=t; themeSel.appendChild(o);
+});
+["Application","Continuing eligibility","Ongoing","Event-driven","Termination"]
+  .filter(s=>DATA.some(d=>d.stage===s)).forEach(s=>{
+  const o=document.createElement("option"); o.value=s; o.textContent=s; stageSel.appendChild(o);
+});
+
+function render(){
+  const list=document.getElementById("list");
+  list.textContent="";
+  const rows=DATA.filter(d=>d.bucket===bucket)
+    .filter(d=>!themeSel.value||d.theme===themeSel.value)
+    .filter(d=>!stageSel.value||d.stage===stageSel.value);
+  document.getElementById("count").textContent=rows.length+" of "+DATA.filter(d=>d.bucket===bucket).length;
+  if(!rows.length){
+    const e=document.createElement("div"); e.className="check-why";
+    e.style.padding="24px 20px"; e.textContent="No rules match these filters.";
+    list.appendChild(e); return;
+  }
+  rows.forEach(d=>{
+    const row=document.createElement("div"); row.className="row";
+    const btn=document.createElement("button"); btn.className="row-hd";
+    btn.setAttribute("aria-expanded","false");
+    const bar=document.createElement("span");
+    bar.className="bar "+d.bucket.replace(/\s/g,"");
+    const mid=document.createElement("div");
+    const cite=document.createElement("div"); cite.className="cite";
+    cite.textContent=d.chapter+" · "+d.rule;
+    const sum=document.createElement("div"); sum.className="sum"; sum.textContent=d.summary;
+    const meta=document.createElement("div"); meta.className="meta";
+    const cls=d.bucket==="Obligation"?"b":d.bucket==="Right"?"r":"n";
+    [[d.detail,cls],[d.theme,""],[d.stage,""],[d.trigger,""],[d.applies,""]].forEach(([t,k])=>{
+      if(!t||t==="n/a") return;
+      const s=document.createElement("span"); s.className="tag"+(k?" "+k:""); s.textContent=t; meta.appendChild(s);
+    });
+    if(/^(KEY|HIGH|LIVE|IMPORTANT|PRACTICAL|NOTABLE|TRAP)/.test(d.notes||"")){
+      const s=document.createElement("span"); s.className="tag k"; s.textContent="priority"; meta.appendChild(s);
+    }
+    mid.appendChild(cite); mid.appendChild(sum); mid.appendChild(meta);
+    const car=document.createElement("span"); car.className="caret"; car.textContent="+";
+    btn.appendChild(bar); btn.appendChild(mid); btn.appendChild(car);
+
+    const det=document.createElement("div"); det.className="detail"; det.hidden=true;
+    if(d.notes){
+      const w=document.createElement("div");
+      const h=document.createElement("h4"); h.textContent="Why it matters";
+      const p=document.createElement("p"); p.className="note"; p.textContent=d.notes; p.style.margin="0";
+      w.appendChild(h); w.appendChild(p); det.appendChild(w);
+    }
+    const w2=document.createElement("div");
+    const h2=document.createElement("h4"); h2.textContent="Rule extract";
+    const ex=document.createElement("div"); ex.className="extract"; ex.textContent=d.text;
+    w2.appendChild(h2); w2.appendChild(ex); det.appendChild(w2);
+
+    const w3=document.createElement("div");
+    const h3=document.createElement("h4"); h3.textContent="Internal control";
+    const cw=document.createElement("div"); cw.className="ctrl";
+    const inp=document.createElement("input"); inp.type="text";
+    inp.placeholder="e.g. CTRL-0142 — daily margin funding";
+    inp.value=store.get(d.id);
+    const st=document.createElement("span"); st.className="saved";
+    let t=null;
+    inp.addEventListener("input",()=>{
+      clearTimeout(t);
+      t=setTimeout(()=>{
+        const ok=store.set(d.id,inp.value);
+        st.textContent = inp.value ? (ok?"saved on this machine":"not saved — storage blocked") : "";
+        st.style.color = ok?"var(--pass)":"var(--fail)";
+      },400);
+    });
+    cw.appendChild(inp); cw.appendChild(st);
+    w3.appendChild(h3); w3.appendChild(cw); det.appendChild(w3);
+
+    btn.addEventListener("click",()=>{
+      const open=det.hidden;
+      det.hidden=!open; car.textContent=open?"−":"+";
+      btn.setAttribute("aria-expanded",String(open));
+    });
+    row.appendChild(btn); row.appendChild(det); list.appendChild(row);
+  });
+}
+document.querySelectorAll(".tab").forEach(t=>{
+  t.addEventListener("click",()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.setAttribute("aria-selected","false"));
+    t.setAttribute("aria-selected","true");
+    bucket=t.dataset.b; render();
+  });
+});
+themeSel.addEventListener("change",render);
+stageSel.addEventListener("change",render);
+
+runChecks();
+render();
+</script>
