@@ -43,10 +43,6 @@ button,select,input{font:inherit;color:inherit}
 .seg button[aria-pressed="true"]{background:#fff;color:var(--brand);font-weight:600}
 .mast :focus-visible{outline:2px solid #fff;outline-offset:2px}
 .mast.bare .searchwrap,.mast.bare .ccpsel,.mast.bare .seg{display:none}
-.navbtn{border:1px solid transparent;background:none;color:rgba(255,255,255,.8);
-  font-size:13.5px;padding:6px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
-.navbtn:hover{background:rgba(255,255,255,.14);color:#fff}
-.navbtn[aria-pressed="true"]{background:#fff;color:var(--brand);font-weight:600}
 .homelink:hover b{text-decoration:underline}
 .pdfwrap{height:calc(100vh - 57px);display:flex;flex-direction:column;background:var(--surface2)}
 .pdfbar{display:flex;align-items:center;gap:14px;padding:10px 22px;background:var(--surface);
@@ -168,15 +164,24 @@ button,select,input{font:inherit;color:inherit}
 .monstat span{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;
   text-transform:uppercase;color:var(--muted)}
 .monstat.changed b{color:var(--flag)} .monstat.broken b{color:#B3261E}
-.monlast{font-size:12.5px;color:var(--muted);margin-bottom:30px}
-.monsec{margin-bottom:34px}
-.monsec>h3{margin:0 0 11px}
+.monlast{font-size:12.5px;color:var(--muted);margin-bottom:24px}
+.chiprow{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap}
+.chip{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;
+  background:var(--surface);padding:7px 14px;font-size:13.5px;color:var(--ink2);cursor:pointer}
+.chip:hover{border-color:var(--accent);color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent-soft);border-color:var(--accent);
+  color:var(--accent);font-weight:600}
+.chip i{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"] i{color:var(--accent)}
+.chipdot{width:6px;height:6px;border-radius:50%;background:var(--flag);flex:none}
+.morebtn{border:0;background:none;color:var(--accent);font-size:12.5px;cursor:pointer;padding:2px 0 0}
+.morebtn:hover{text-decoration:underline}
 .moncard{border:1px solid var(--line);border-left:3px solid var(--line);border-radius:9px;
   background:var(--surface);padding:15px 17px;margin-bottom:11px;box-shadow:var(--shadow)}
 .moncard.changed{border-left-color:var(--flag)}
 .moncard.broken{border-left-color:#B3261E}
 .moncard.clear{border-left-color:#2E7D5B}
-.moncard.pending{border-left-color:var(--line)}
 .monhd{display:flex;align-items:flex-start;gap:14px;margin-bottom:11px}
 .monname{font-size:14.5px;font-weight:600;line-height:1.35}
 .monsub{font-size:12.5px;color:var(--muted);margin-top:1px}
@@ -189,11 +194,11 @@ button,select,input{font:inherit;color:inherit}
 .monmeta{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:5px 20px;
   font-size:12.5px;color:var(--ink2);margin-bottom:10px}
 .monrow{display:flex;gap:9px;align-items:baseline}
-.monrow .lbl{min-width:88px}
+.monrow .lbl{min-width:88px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted)}
 .monerr{background:#FBE9E7;color:#B3261E;border-radius:6px;padding:8px 11px;
   font-size:12.5px;margin-bottom:10px}
 .monchanges{margin:0 0 10px;padding-left:18px;font-size:13px;color:var(--ink2)}
-.monchanges li{margin-bottom:3px}
 .doctablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:7px;margin:10px 0}
 .doctable{width:100%;border-collapse:collapse;font-size:12.5px;min-width:420px}
 .doctable th{text-align:left;font-family:var(--mono);font-size:9.5px;letter-spacing:.09em;
@@ -208,8 +213,11 @@ button,select,input{font:inherit;color:inherit}
 .monfoot{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;font-size:12.5px;
   padding-top:10px;border-top:1px solid var(--line)}
 .monfoot a{color:var(--accent);text-decoration:none;white-space:nowrap}
-.monfoot a:hover{text-decoration:underline}
 .monnote{color:var(--muted);line-height:1.5}
+.navbtn{border:1px solid transparent;background:none;color:rgba(255,255,255,.8);
+  font-size:13.5px;padding:6px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
+.navbtn:hover{background:rgba(255,255,255,.14);color:#fff}
+.navbtn[aria-pressed="true"]{background:#fff;color:var(--brand);font-weight:600}
 
 /* ---------- detail ---------- */
 .detail{overflow-y:auto;max-height:calc(100vh - 100px);padding:26px 30px 60px;background:var(--ground)}
@@ -747,174 +755,7 @@ function renderHome(){
 }
 
 document.getElementById("goHome").addEventListener("click",()=>{
-  selectedGroup=null; /* ---------- rulebook change monitor dashboard ---------- */
-let MON=null, monLoaded=false;
-
-function relDays(iso){
-  if(!iso) return "";
-  const d=new Date(iso); if(isNaN(d)) return "";
-  const days=Math.floor((Date.now()-d.getTime())/86400000);
-  if(days<=0) return "today";
-  if(days===1) return "yesterday";
-  if(days<30) return days+" days ago";
-  if(days<365) return Math.floor(days/30)+" months ago";
-  return Math.floor(days/365)+" years ago";
-}
-function parseDocDate(s){
-  if(!s) return null;
-  const d=new Date(s.replace(/(\d+)(st|nd|rd|th)/,"$1"));
-  return isNaN(d)?null:d;
-}
-function fmtWhen(iso){
-  if(!iso) return "never";
-  const d=new Date(iso); if(isNaN(d)) return iso;
-  return d.toISOString().slice(0,16).replace("T"," ")+" UTC";
-}
-
-function statusOf(s){
-  if(!s.checked_at) return {k:"pending", t:"Not yet checked"};
-  if(!s.ok)         return {k:"broken",  t:"Check failed"};
-  if(s.changed)     return {k:"changed", t:"Change detected"};
-  return {k:"clear", t:"No change"};
-}
-
-function buildMonitor(){
-  const host=document.getElementById("monBody");
-  host.textContent="";
-  if(!MON){
-    const e=document.createElement("div"); e.className="empty";
-    const b=document.createElement("b"); b.textContent="Status file not found";
-    e.appendChild(b);
-    e.appendChild(document.createTextNode(
-      "data/monitor.json has not been published yet. It is created by the first scheduled check."));
-    host.appendChild(e); return;
-  }
-
-  /* headline */
-  const sum=document.createElement("div"); sum.className="monsum";
-  const counts={changed:0,broken:0,clear:0,pending:0};
-  MON.sources.forEach(s=>counts[statusOf(s).k]++);
-  [["Changes detected",counts.changed,"changed"],
-   ["Checks failing",counts.broken,"broken"],
-   ["No change",counts.clear,"clear"],
-   ["Not yet checked",counts.pending,"pending"]].forEach(([lbl,n,k])=>{
-    const c=document.createElement("div"); c.className="monstat "+k;
-    const b=document.createElement("b"); b.textContent=n;
-    const t=document.createElement("span"); t.textContent=lbl;
-    c.append(b,t); sum.appendChild(c);
-  });
-  const last=document.createElement("div"); last.className="monlast";
-  last.textContent="Last run "+fmtWhen(MON.generated_at)+
-    (MON.seeded?" · baseline entered manually; first scheduled run will replace it":"");
-  host.append(sum,last);
-
-  /* grouped by clearing house */
-  const byCcp={};
-  MON.sources.forEach(s=>{ (byCcp[s.ccp]=byCcp[s.ccp]||[]).push(s); });
-  Object.keys(byCcp).sort().forEach(ccp=>{
-    const sec=document.createElement("section"); sec.className="monsec";
-    const h=document.createElement("h3"); h.className="lbl"; h.textContent=ccp;
-    sec.appendChild(h);
-
-    byCcp[ccp].forEach(s=>{
-      const st=statusOf(s);
-      const card=document.createElement("div"); card.className="moncard "+st.k;
-
-      const hd=document.createElement("div"); hd.className="monhd";
-      const nm=document.createElement("div");
-      const t=document.createElement("div"); t.className="monname"; t.textContent=s.label;
-      const sub=document.createElement("div"); sub.className="monsub";
-      sub.textContent=s.entity+(s.early_warning?" · early warning":"");
-      nm.append(t,sub);
-      const badge=document.createElement("span"); badge.className="mbadge "+st.k; badge.textContent=st.t;
-      hd.append(nm,badge); card.appendChild(hd);
-
-      const meta=document.createElement("div"); meta.className="monmeta";
-      const method={published_dates:"Reads published dates",
-                    link_manifest:"Compares document links",
-                    content_hash:"Compares file contents"}[s.method]||s.method;
-      [["Method",method],
-       ["Last checked",s.checked_at?fmtWhen(s.checked_at)+" ("+relDays(s.checked_at)+")":"never"],
-       ["Last change",s.last_change_at?fmtWhen(s.last_change_at):"none recorded"]]
-       .forEach(([k,v])=>{
-        const r=document.createElement("div"); r.className="monrow";
-        const a=document.createElement("span"); a.className="lbl"; a.textContent=k;
-        const b=document.createElement("span"); b.textContent=v;
-        r.append(a,b); meta.appendChild(r);
-      });
-      card.appendChild(meta);
-
-      if(s.error){
-        const er=document.createElement("div"); er.className="monerr"; er.textContent=s.error;
-        card.appendChild(er);
-      }
-
-      if(s.changes && s.changes.length){
-        const ul=document.createElement("ul"); ul.className="monchanges";
-        s.changes.forEach(c=>{ const li=document.createElement("li");
-          li.textContent=c.detail; ul.appendChild(li); });
-        card.appendChild(ul);
-      }
-
-      /* per-document table where the clearing house publishes dates */
-      if(s.links && s.links.length){
-        const wrap=document.createElement("div"); wrap.className="doctablewrap";
-        const tb=document.createElement("table"); tb.className="doctable";
-        const thead=document.createElement("thead"); const tr=document.createElement("tr");
-        ["Document","Last updated","Age"].forEach(x=>{
-          const th=document.createElement("th"); th.textContent=x; tr.appendChild(th); });
-        thead.appendChild(tr); tb.appendChild(thead);
-        const tbody=document.createElement("tbody");
-        const sorted=s.links.slice().sort((a,b)=>{
-          const da=parseDocDate(a.date), db=parseDocDate(b.date);
-          if(da&&db) return db-da;
-          if(da) return -1;
-          if(db) return 1;
-          return 0;
-        });
-        sorted.forEach(l=>{
-          const r=document.createElement("tr");
-          const c1=document.createElement("td");
-          if(l.url){ const a=document.createElement("a"); a.href=l.url; a.target="_blank";
-            a.rel="noopener"; a.textContent=l.text||l.filename; c1.appendChild(a); }
-          else c1.textContent=l.text||l.filename;
-          const c2=document.createElement("td"); c2.className="num";
-          c2.textContent=l.date||"not published";
-          if(!l.date) c2.classList.add("faintcell");
-          const c3=document.createElement("td"); c3.className="num";
-          const d=parseDocDate(l.date);
-          c3.textContent=d?relDays(d.toISOString()):"";
-          r.append(c1,c2,c3); tbody.appendChild(r);
-        });
-        tb.appendChild(tbody); wrap.appendChild(tb); card.appendChild(wrap);
-      }
-
-      const foot=document.createElement("div"); foot.className="monfoot";
-      const a=document.createElement("a"); a.href=s.url; a.target="_blank"; a.rel="noopener";
-      a.textContent="Open source page";
-      foot.appendChild(a);
-      if(s.note){ const n=document.createElement("span"); n.className="monnote";
-        n.textContent=s.note; foot.appendChild(n); }
-      card.appendChild(foot);
-
-      sec.appendChild(card);
-    });
-    host.appendChild(sec);
-  });
-}
-
-async function loadMonitor(){
-  if(monLoaded) return;
-  monLoaded=true;
-  try{
-    const r=await fetch("data/monitor.json",{cache:"no-store"});
-    if(r.ok) MON=await r.json();
-  }catch(e){ MON=null; }
-  buildMonitor();
-}
-
-
-renderHome(); showView("home");
+  selectedGroup=null; renderHome(); showView("home");
 });
 /* ---------- rulebook change monitor dashboard ---------- */
 let MON=null, monLoaded=false;
@@ -947,6 +788,8 @@ function statusOf(s){
   return {k:"clear", t:"No change"};
 }
 
+let monCcp=null;
+
 function buildMonitor(){
   const host=document.getElementById("monBody");
   host.textContent="";
@@ -959,10 +802,9 @@ function buildMonitor(){
     host.appendChild(e); return;
   }
 
-  /* headline */
-  const sum=document.createElement("div"); sum.className="monsum";
   const counts={changed:0,broken:0,clear:0,pending:0};
   MON.sources.forEach(s=>counts[statusOf(s).k]++);
+  const sum=document.createElement("div"); sum.className="monsum";
   [["Changes detected",counts.changed,"changed"],
    ["Checks failing",counts.broken,"broken"],
    ["No change",counts.clear,"clear"],
@@ -974,102 +816,129 @@ function buildMonitor(){
   });
   const last=document.createElement("div"); last.className="monlast";
   last.textContent="Last run "+fmtWhen(MON.generated_at)+
-    (MON.seeded?" · baseline entered manually; first scheduled run will replace it":"");
+    (MON.seeded?" \u00b7 baseline entered manually; first scheduled run will replace it":"");
   host.append(sum,last);
 
-  /* grouped by clearing house */
+  /* filter by clearing house */
   const byCcp={};
   MON.sources.forEach(s=>{ (byCcp[s.ccp]=byCcp[s.ccp]||[]).push(s); });
-  Object.keys(byCcp).sort().forEach(ccp=>{
-    const sec=document.createElement("section"); sec.className="monsec";
-    const h=document.createElement("h3"); h.className="lbl"; h.textContent=ccp;
-    sec.appendChild(h);
+  const ccps=Object.keys(byCcp).sort();
+  if(!monCcp || !byCcp[monCcp]) monCcp=ccps[0];
 
-    byCcp[ccp].forEach(s=>{
-      const st=statusOf(s);
-      const card=document.createElement("div"); card.className="moncard "+st.k;
-
-      const hd=document.createElement("div"); hd.className="monhd";
-      const nm=document.createElement("div");
-      const t=document.createElement("div"); t.className="monname"; t.textContent=s.label;
-      const sub=document.createElement("div"); sub.className="monsub";
-      sub.textContent=s.entity+(s.early_warning?" · early warning":"");
-      nm.append(t,sub);
-      const badge=document.createElement("span"); badge.className="mbadge "+st.k; badge.textContent=st.t;
-      hd.append(nm,badge); card.appendChild(hd);
-
-      const meta=document.createElement("div"); meta.className="monmeta";
-      const method={published_dates:"Reads published dates",
-                    link_manifest:"Compares document links",
-                    content_hash:"Compares file contents"}[s.method]||s.method;
-      [["Method",method],
-       ["Last checked",s.checked_at?fmtWhen(s.checked_at)+" ("+relDays(s.checked_at)+")":"never"],
-       ["Last change",s.last_change_at?fmtWhen(s.last_change_at):"none recorded"]]
-       .forEach(([k,v])=>{
-        const r=document.createElement("div"); r.className="monrow";
-        const a=document.createElement("span"); a.className="lbl"; a.textContent=k;
-        const b=document.createElement("span"); b.textContent=v;
-        r.append(a,b); meta.appendChild(r);
-      });
-      card.appendChild(meta);
-
-      if(s.error){
-        const er=document.createElement("div"); er.className="monerr"; er.textContent=s.error;
-        card.appendChild(er);
-      }
-
-      if(s.changes && s.changes.length){
-        const ul=document.createElement("ul"); ul.className="monchanges";
-        s.changes.forEach(c=>{ const li=document.createElement("li");
-          li.textContent=c.detail; ul.appendChild(li); });
-        card.appendChild(ul);
-      }
-
-      /* per-document table where the clearing house publishes dates */
-      if(s.links && s.links.length){
-        const wrap=document.createElement("div"); wrap.className="doctablewrap";
-        const tb=document.createElement("table"); tb.className="doctable";
-        const thead=document.createElement("thead"); const tr=document.createElement("tr");
-        ["Document","Last updated","Age"].forEach(x=>{
-          const th=document.createElement("th"); th.textContent=x; tr.appendChild(th); });
-        thead.appendChild(tr); tb.appendChild(thead);
-        const tbody=document.createElement("tbody");
-        const sorted=s.links.slice().sort((a,b)=>{
-          const da=parseDocDate(a.date), db=parseDocDate(b.date);
-          if(da&&db) return db-da;
-          if(da) return -1;
-          if(db) return 1;
-          return 0;
-        });
-        sorted.forEach(l=>{
-          const r=document.createElement("tr");
-          const c1=document.createElement("td");
-          if(l.url){ const a=document.createElement("a"); a.href=l.url; a.target="_blank";
-            a.rel="noopener"; a.textContent=l.text||l.filename; c1.appendChild(a); }
-          else c1.textContent=l.text||l.filename;
-          const c2=document.createElement("td"); c2.className="num";
-          c2.textContent=l.date||"not published";
-          if(!l.date) c2.classList.add("faintcell");
-          const c3=document.createElement("td"); c3.className="num";
-          const d=parseDocDate(l.date);
-          c3.textContent=d?relDays(d.toISOString()):"";
-          r.append(c1,c2,c3); tbody.appendChild(r);
-        });
-        tb.appendChild(tbody); wrap.appendChild(tb); card.appendChild(wrap);
-      }
-
-      const foot=document.createElement("div"); foot.className="monfoot";
-      const a=document.createElement("a"); a.href=s.url; a.target="_blank"; a.rel="noopener";
-      a.textContent="Open source page";
-      foot.appendChild(a);
-      if(s.note){ const n=document.createElement("span"); n.className="monnote";
-        n.textContent=s.note; foot.appendChild(n); }
-      card.appendChild(foot);
-
-      sec.appendChild(card);
-    });
-    host.appendChild(sec);
+  const chips=document.createElement("div"); chips.className="chiprow";
+  ccps.forEach(c=>{
+    const list=byCcp[c];
+    const attention=list.some(s=>{const k=statusOf(s).k; return k==="changed"||k==="broken";});
+    const b=document.createElement("button"); b.className="chip";
+    b.setAttribute("aria-pressed", String(c===monCcp));
+    const t=document.createElement("span"); t.textContent=c;
+    const n=document.createElement("i"); n.textContent=list.length;
+    b.append(t,n);
+    if(attention){ const d=document.createElement("span"); d.className="chipdot";
+      d.title="Needs attention"; b.appendChild(d); }
+    b.addEventListener("click",()=>{ monCcp=c; buildMonitor(); });
+    chips.appendChild(b);
   });
+  host.appendChild(chips);
+
+  const wrap=document.createElement("div");
+  byCcp[monCcp].forEach(s=>wrap.appendChild(sourceCard(s)));
+  host.appendChild(wrap);
+}
+
+function sourceCard(s){
+  const st=statusOf(s);
+  const card=document.createElement("div"); card.className="moncard "+st.k;
+
+  const hd=document.createElement("div"); hd.className="monhd";
+  const nm=document.createElement("div");
+  const t=document.createElement("div"); t.className="monname"; t.textContent=s.label;
+  const sub=document.createElement("div"); sub.className="monsub";
+  sub.textContent=s.entity+(s.early_warning?" \u00b7 early warning":"");
+  nm.append(t,sub);
+  const badge=document.createElement("span"); badge.className="mbadge "+st.k; badge.textContent=st.t;
+  hd.append(nm,badge); card.appendChild(hd);
+
+  const meta=document.createElement("div"); meta.className="monmeta";
+  const method={published_dates:"Reads published dates",
+                link_manifest:"Compares document links",
+                content_hash:"Compares file contents"}[s.method]||s.method;
+  [["Method",method],
+   ["Last checked",s.checked_at?fmtWhen(s.checked_at)+" ("+relDays(s.checked_at)+")":"never"],
+   ["Last change",s.last_change_at?fmtWhen(s.last_change_at):"none recorded"]]
+   .forEach(([k,v])=>{
+    const r=document.createElement("div"); r.className="monrow";
+    const a=document.createElement("span"); a.className="lbl"; a.textContent=k;
+    const b=document.createElement("span"); b.textContent=v;
+    r.append(a,b); meta.appendChild(r);
+  });
+  card.appendChild(meta);
+
+  if(s.error){
+    const er=document.createElement("div"); er.className="monerr"; er.textContent=s.error;
+    card.appendChild(er);
+  }
+  if(s.changes && s.changes.length){
+    const ul=document.createElement("ul"); ul.className="monchanges";
+    s.changes.forEach(c=>{ const li=document.createElement("li");
+      li.textContent=c.detail; ul.appendChild(li); });
+    card.appendChild(ul);
+  }
+
+  if(s.links && s.links.length){
+    const SHOW=8;
+    const sorted=s.links.slice().sort((a,b)=>{
+      const da=parseDocDate(a.date), db=parseDocDate(b.date);
+      if(da&&db) return db-da;
+      if(da) return -1; if(db) return 1; return 0;
+    });
+    const wrap=document.createElement("div"); wrap.className="doctablewrap";
+    const tb=document.createElement("table"); tb.className="doctable";
+    const thead=document.createElement("thead"); const tr=document.createElement("tr");
+    ["Document","Last updated","Age"].forEach(x=>{
+      const th=document.createElement("th"); th.textContent=x; tr.appendChild(th); });
+    thead.appendChild(tr); tb.appendChild(thead);
+    const tbody=document.createElement("tbody"); tb.appendChild(tbody);
+
+    let expanded=false;
+    function fill(){
+      tbody.textContent="";
+      (expanded?sorted:sorted.slice(0,SHOW)).forEach(l=>{
+        const r=document.createElement("tr");
+        const c1=document.createElement("td");
+        if(l.url){ const a=document.createElement("a"); a.href=l.url; a.target="_blank";
+          a.rel="noopener"; a.textContent=l.text||l.filename; c1.appendChild(a); }
+        else c1.textContent=l.text||l.filename;
+        const c2=document.createElement("td"); c2.className="num";
+        c2.textContent=l.date||"not published";
+        if(!l.date) c2.classList.add("faintcell");
+        const c3=document.createElement("td"); c3.className="num";
+        const d=parseDocDate(l.date);
+        c3.textContent=d?relDays(d.toISOString()):"";
+        r.append(c1,c2,c3); tbody.appendChild(r);
+      });
+    }
+    fill();
+    wrap.appendChild(tb); card.appendChild(wrap);
+    if(sorted.length>SHOW){
+      const more=document.createElement("button"); more.className="morebtn";
+      more.textContent="Show all "+sorted.length+" documents";
+      more.addEventListener("click",()=>{
+        expanded=!expanded; fill();
+        more.textContent=expanded?"Show fewer":"Show all "+sorted.length+" documents";
+      });
+      card.appendChild(more);
+    }
+  }
+
+  const foot=document.createElement("div"); foot.className="monfoot";
+  const a=document.createElement("a"); a.href=s.url; a.target="_blank"; a.rel="noopener";
+  a.textContent="Open source page";
+  foot.appendChild(a);
+  if(s.note){ const n=document.createElement("span"); n.className="monnote";
+    n.textContent=s.note; foot.appendChild(n); }
+  card.appendChild(foot);
+  return card;
 }
 
 async function loadMonitor(){
@@ -1081,7 +950,6 @@ async function loadMonitor(){
   }catch(e){ MON=null; }
   buildMonitor();
 }
-
 
 renderHome(); showView("home");
 
