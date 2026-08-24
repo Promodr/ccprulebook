@@ -152,7 +152,6 @@ button,select,input{font:inherit;color:inherit}
 .badge.test{background:var(--flag-bg);color:var(--flag)}
 .homelink{background:none;border:0;padding:0;cursor:pointer;color:inherit;font:inherit;text-align:left}
 
-
 /* ---------- monitor ---------- */
 .monwrap{max-width:1000px;margin:0 auto;padding:34px 28px 90px}
 .monwrap>h1{margin:0 0 6px;font-size:22px;font-weight:600;letter-spacing:-.018em}
@@ -218,6 +217,9 @@ button,select,input{font:inherit;color:inherit}
   font-size:13.5px;padding:6px 12px;border-radius:7px;cursor:pointer;white-space:nowrap}
 .navbtn:hover{background:rgba(255,255,255,.14);color:#fff}
 .navbtn[aria-pressed="true"]{background:#fff;color:var(--brand);font-weight:600}
+
+.runlink{color:var(--accent);text-decoration:none}
+.runlink:hover{text-decoration:underline}
 
 /* ---------- detail ---------- */
 .detail{overflow-y:auto;max-height:calc(100vh - 100px);padding:26px 30px 60px;background:var(--ground)}
@@ -349,9 +351,6 @@ dfn:hover,dfn:focus{background:var(--accent-soft)}
 <div id="monView" hidden>
   <div class="monwrap">
     <h1>Rulebook change monitor</h1>
-    <p class="lede">Each clearing house is checked on a schedule for amended or newly published
-    rulebooks. Where a clearing house publishes a last-updated date, that date is read directly;
-    where it does not, the document itself is compared against the previous version.</p>
     <div id="monBody"></div>
   </div>
 </div>
@@ -815,8 +814,13 @@ function buildMonitor(){
     c.append(b,t); sum.appendChild(c);
   });
   const last=document.createElement("div"); last.className="monlast";
-  last.textContent="Last run "+fmtWhen(MON.generated_at)+
-    (MON.seeded?" \u00b7 baseline entered manually; first scheduled run will replace it":"");
+  last.appendChild(document.createTextNode("Last run "+fmtWhen(MON.generated_at)+" \u00b7 "));
+  const run=document.createElement("a");
+  run.href="https://github.com/Promodr/ccprulebook/actions/workflows/monitor_workflow.yml";
+  run.target="_blank"; run.rel="noopener"; run.className="runlink";
+  run.textContent="Run a check now";
+  last.appendChild(run);
+  last.appendChild(document.createTextNode(" (opens GitHub, then press Run workflow)"));
   host.append(sum,last);
 
   /* filter by clearing house */
@@ -863,10 +867,14 @@ function sourceCard(s){
   const method={published_dates:"Reads published dates",
                 link_manifest:"Compares document links",
                 content_hash:"Compares file contents"}[s.method]||s.method;
-  [["Method",method],
-   ["Last checked",s.checked_at?fmtWhen(s.checked_at)+" ("+relDays(s.checked_at)+")":"never"],
-   ["Last change",s.last_change_at?fmtWhen(s.last_change_at):"none recorded"]]
-   .forEach(([k,v])=>{
+  const rows=[["Method",method],
+   ["Last checked",s.checked_at?fmtWhen(s.checked_at)+" ("+relDays(s.checked_at)+")":"never"]];
+  if(s.latest_doc_date){
+    const d=parseDocDate(s.latest_doc_date);
+    rows.push(["Newest document",s.latest_doc_date+(d?" ("+relDays(d.toISOString())+")":"")]);
+  }
+  if(s.change_detected_at) rows.push(["Change detected",fmtWhen(s.change_detected_at)]);
+  rows.forEach(([k,v])=>{
     const r=document.createElement("div"); r.className="monrow";
     const a=document.createElement("span"); a.className="lbl"; a.textContent=k;
     const b=document.createElement("span"); b.textContent=v;

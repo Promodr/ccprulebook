@@ -38,6 +38,17 @@ DATE_RE = re.compile(
     r"|\d{4}-\d{2}-\d{2})\b", re.I)
 
 
+def _date_key(s: str):
+    """Sort key for the date formats the clearing houses print."""
+    from datetime import datetime as _dt
+    for fmt in ("%d %B %Y", "%B %d, %Y", "%B %d %Y", "%Y-%m-%d"):
+        try:
+            return _dt.strptime(s.strip(), fmt)
+        except ValueError:
+            continue
+    return _dt.min
+
+
 def now() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
@@ -156,6 +167,10 @@ def check_source(src: dict, prev: dict) -> dict:
         links = collect_links(body, meta["final_url"])
         res["links"] = links
         res["doc_count"] = len(links)
+        # the newest date the clearing house itself publishes - this is the real
+        # "last updated", as distinct from when we happened to look
+        dated = [l["date"] for l in links if l["date"]]
+        res["latest_doc_date"] = max(dated, key=_date_key) if dated else ""
         old_links = {l["url"]: l for l in prev.get("links", [])}
         new_links = {l["url"]: l for l in links}
 
@@ -186,10 +201,12 @@ def check_source(src: dict, prev: dict) -> dict:
             res.update(ok=False,
                        error=f"Only {len(links)} documents found, previously {old_n} - page layout may have changed")
 
+    # when a change was DETECTED - not when the document was actually amended.
+    # For sources that publish dates, latest_doc_date carries the real answer.
     if res["changed"]:
-        res["last_change_at"] = res["checked_at"]
+        res["change_detected_at"] = res["checked_at"]
     else:
-        res["last_change_at"] = prev.get("last_change_at", "")
+        res["change_detected_at"] = prev.get("change_detected_at", "")
     return res
 
 
