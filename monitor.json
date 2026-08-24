@@ -1,0 +1,394 @@
+{
+ "generated_at": "2026-08-24T22:30:39+00:00",
+ "seeded": true,
+ "summary": {
+  "sources": 12,
+  "changed": 0,
+  "broken": 0,
+  "healthy": 2
+ },
+ "sources": [
+  {
+   "id": "LCH_LTD_INDEX",
+   "ccp": "LCH",
+   "entity": "LCH Limited",
+   "label": "LCH Limited rulebook index",
+   "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited",
+   "method": "published_dates",
+   "primary": true,
+   "early_warning": false,
+   "note": "Prints a last-updated date beside every document. The strongest signal available across all six sources - it names which document moved and when.",
+   "checked_at": "2026-08-24T22:30:39+00:00",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [
+    {
+     "text": "General Regulations",
+     "date": "17 August 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Default Rules",
+     "date": "23 March 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Settlement Finality Regulations",
+     "date": "21 July 2025",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Sponsored Clearing Regulations",
+     "date": "6 March 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Guaranteed Sponsored Clearing Regulations",
+     "date": "23 June 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 1 - Clearing Member and Dealer Status",
+     "date": "17 August 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 2B - RepoClear Service",
+     "date": "13 February 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 2C - SwapClear Service",
+     "date": "12 June 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 2D - EquityClear Service",
+     "date": "10 August 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 2I - ForexClear Service",
+     "date": "17 August 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 2J - Listed Interest Rates Service",
+     "date": "30 June 2025",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 3 - Financial Transactions",
+     "date": "6 March 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 4 - Collateral",
+     "date": "20 July 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 5 - Disciplinary Proceedings",
+     "date": "12 November 2020",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 6 - Business Continuity",
+     "date": "30 June 2025",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 7 - Appeal Procedures",
+     "date": "12 November 2020",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Section 8 - Complaints",
+     "date": "7 February 2022",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "FCM Regulations",
+     "date": "17 August 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "FCM Procedures",
+     "date": "17 August 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Product Specific Contract Terms and Eligibility Criteria Manual",
+     "date": "17 August 2026",
+     "url": "",
+     "filename": ""
+    }
+   ],
+   "baseline": true,
+   "doc_count": 20
+  },
+  {
+   "id": "LCH_SA_INDEX",
+   "ccp": "LCH",
+   "entity": "LCH SA",
+   "label": "LCH SA rulebook index",
+   "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa",
+   "method": "published_dates",
+   "primary": true,
+   "early_warning": false,
+   "note": "Dates shown for some documents only. Several filenames carry the version date, so a changed filename is itself a signal.",
+   "checked_at": "2026-08-24T22:30:39+00:00",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [
+    {
+     "text": "Clearing Rulebook (English)",
+     "date": "",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "CDS Clearing Rule Book",
+     "date": "22 May 2026",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "FCM/BD CDS Clearing Regulations",
+     "date": "21 July 2025",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "CDS Clearing Supplement",
+     "date": "26 September 2023",
+     "url": "",
+     "filename": ""
+    },
+    {
+     "text": "Digital Asset Derivatives Clearing Rulebook",
+     "date": "",
+     "url": "",
+     "filename": ""
+    }
+   ],
+   "baseline": true,
+   "doc_count": 5
+  },
+  {
+   "id": "CME_SC_INDEX",
+   "ccp": "CME",
+   "entity": "CME Securities Clearing",
+   "label": "CME Securities Clearing rulebook page",
+   "url": "https://www.cmegroup.com/rulebook/cmesc/",
+   "method": "link_manifest",
+   "primary": true,
+   "early_warning": false,
+   "note": "No dates published. Diff the set of document links to catch additions and retargeting.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "CME_SC_PDF",
+   "ccp": "CME",
+   "entity": "CME Securities Clearing",
+   "label": "CME Securities Clearing Rulebook (PDF)",
+   "url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf",
+   "method": "content_hash",
+   "primary": true,
+   "early_warning": false,
+   "note": "Overwritten in place, so hashing the file is the only way to see the text change.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "CME_RULE_FILINGS",
+   "ccp": "CME",
+   "entity": "CME Group",
+   "label": "CME rule filings",
+   "url": "https://www.cmegroup.com/market-regulation/rule-filings.html",
+   "method": "link_manifest",
+   "primary": false,
+   "early_warning": true,
+   "note": "Filings normally appear before the rulebook PDF is republished. Early warning, not a rulebook source.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "ICE_EU_PDF",
+   "ccp": "ICE",
+   "entity": "ICE Clear Europe",
+   "label": "ICE Clear Europe Clearing Rules (PDF)",
+   "url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf",
+   "method": "content_hash",
+   "primary": true,
+   "early_warning": false,
+   "note": "Stable URL, overwritten in place. Cover page prints a month and year - extracted as a readable version marker.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "ICE_CC_PDF",
+   "ccp": "ICE",
+   "entity": "ICE Clear Credit",
+   "label": "ICE Clear Credit Rules (PDF)",
+   "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
+   "method": "content_hash",
+   "primary": true,
+   "early_warning": false,
+   "note": "Carries a copyright and revision line that moves with each amendment.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "ICE_CC_TREASURY_PDF",
+   "ccp": "ICE",
+   "entity": "ICE Clear Credit",
+   "label": "ICE Clear Credit Treasury Clearing Rules (PDF)",
+   "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf",
+   "method": "content_hash",
+   "primary": true,
+   "early_warning": false,
+   "note": "Separate rulebook for Treasury clearing. Prints an explicit revision date.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "ICE_US_PDF",
+   "ccp": "ICE",
+   "entity": "ICE Clear US",
+   "label": "ICE Clear US Rules (PDF)",
+   "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
+   "method": "content_hash",
+   "primary": true,
+   "early_warning": false,
+   "note": "Stable URL, overwritten in place.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "ICE_EU_REG",
+   "ccp": "ICE",
+   "entity": "ICE Clear Europe",
+   "label": "ICE Clear Europe regulation page",
+   "url": "https://www.ice.com/clear-europe/regulation",
+   "method": "link_manifest",
+   "primary": false,
+   "early_warning": false,
+   "note": "Regulatory disclosure page, not a rulebook index. Watched only to catch new documents being posted.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "ICE_CC_REG",
+   "ccp": "ICE",
+   "entity": "ICE Clear Credit",
+   "label": "ICE Clear Credit regulation page",
+   "url": "https://www.ice.com/clear-credit/regulation",
+   "method": "link_manifest",
+   "primary": false,
+   "early_warning": false,
+   "note": "Regulatory disclosure page, not a rulebook index. Watched only to catch new documents being posted.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  },
+  {
+   "id": "ICE_US_REG",
+   "ccp": "ICE",
+   "entity": "ICE Clear US",
+   "label": "ICE Clear US regulation page",
+   "url": "https://www.ice.com/clear-us/regulation",
+   "method": "link_manifest",
+   "primary": false,
+   "early_warning": false,
+   "note": "Regulatory disclosure page, not a rulebook index. Watched only to catch new documents being posted.",
+   "checked_at": "",
+   "ok": true,
+   "changed": false,
+   "changes": [],
+   "error": "",
+   "last_change_at": "",
+   "links": [],
+   "baseline": false
+  }
+ ]
+}
