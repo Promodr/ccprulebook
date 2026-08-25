@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-24T23:47:58+00:00",
+ "generated_at": "2026-08-25T01:49:58+00:00",
  "summary": {
   "sources": 12,
   "changed": 0,
@@ -14,15 +14,10 @@
    "label": "LCH Limited Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited",
    "method": "published_dates",
-   "checked_at": "2026-08-24T23:47:54+00:00",
+   "checked_at": "2026-08-25T01:49:54+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - 24 documents recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -189,15 +184,10 @@
    "label": "LCH SA Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa",
    "method": "published_dates",
-   "checked_at": "2026-08-24T23:47:54+00:00",
+   "checked_at": "2026-08-25T01:49:55+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - 15 documents recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -310,15 +300,10 @@
    "label": "CME Securities Clearing Rulebook Page",
    "url": "https://www.cmegroup.com/rulebook/cmesc/",
    "method": "link_manifest",
-   "checked_at": "2026-08-24T23:47:55+00:00",
+   "checked_at": "2026-08-25T01:49:56+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - 6 documents recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -377,15 +362,10 @@
    "label": "CME Securities Clearing Rulebook (PDF)",
    "url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf",
    "method": "content_hash",
-   "checked_at": "2026-08-24T23:47:55+00:00",
+   "checked_at": "2026-08-25T01:49:56+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - baseline recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -410,15 +390,10 @@
    "label": "CME Rule Filings",
    "url": "https://www.cmegroup.com/market-regulation/rule-filings.html",
    "method": "link_manifest",
-   "checked_at": "2026-08-24T23:47:55+00:00",
+   "checked_at": "2026-08-25T01:49:56+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - 25 documents recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -591,15 +566,10 @@
    "label": "ICE Clear Europe Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-08-24T23:47:56+00:00",
+   "checked_at": "2026-08-25T01:49:56+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - baseline recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -624,15 +594,10 @@
    "label": "ICE Clear Credit Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-08-24T23:47:56+00:00",
+   "checked_at": "2026-08-25T01:49:57+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - baseline recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -657,15 +622,10 @@
    "label": "ICE Clear Credit Treasury Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-08-24T23:47:57+00:00",
+   "checked_at": "2026-08-25T01:49:57+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - baseline recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -690,15 +650,10 @@
    "label": "ICE Clear US Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-08-24T23:47:57+00:00",
+   "checked_at": "2026-08-25T01:49:57+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - baseline recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -724,20 +679,15 @@
    "label": "ICE Clear Europe Regulation Page",
    "url": "https://www.ice.com/clear-europe/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-08-24T23:47:57+00:00",
+   "checked_at": "2026-08-25T01:49:58+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - 30 documents recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
     "etag": "",
-    "last_modified": "Fri, 14 Aug 2026 04:05:25 GMT",
+    "last_modified": "Thu, 13 Aug 2026 21:56:06 GMT",
     "content_length": 134828,
     "content_type": "text/html",
     "final_url": "https://www.ice.com/clear-europe/regulation"
@@ -935,15 +885,10 @@
    "label": "ICE Clear Credit Regulation Page",
    "url": "https://www.ice.com/clear-credit/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-08-24T23:47:58+00:00",
+   "checked_at": "2026-08-25T01:49:58+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - 13 documents recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
@@ -1044,15 +989,10 @@
    "label": "ICE Clear US Regulation Page",
    "url": "https://www.ice.com/clear-us/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-08-24T23:47:58+00:00",
+   "checked_at": "2026-08-25T01:49:58+00:00",
    "ok": true,
    "changed": false,
-   "changes": [
-    {
-     "kind": "baseline",
-     "detail": "First check - 4 documents recorded"
-    }
-   ],
+   "changes": [],
    "error": "",
    "http": {
     "status": 200,
