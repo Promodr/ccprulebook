@@ -3,7 +3,7 @@ name: Check rulebooks
 # Runs in GitHub's cloud, so no computer needs to be switched on.
 on:
   schedule:
-    - cron: "0 6 * * 1-5"        # 06:00 UTC, weekdays
+    - cron: "0 6 * * *"          # 06:00 UTC, every day
   workflow_dispatch:              # adds a "Run workflow" button in the Actions tab
 
 permissions:
