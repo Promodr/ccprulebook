@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-08-24T23:41:11+00:00",
+ "generated_at": "2026-08-24T23:47:58+00:00",
  "summary": {
   "sources": 12,
   "changed": 0,
   "broken": 0,
-  "healthy": 0
+  "healthy": 12
  },
  "sources": [
   {
@@ -14,17 +14,173 @@
    "label": "LCH Limited Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited",
    "method": "published_dates",
-   "primary": true,
-   "early_warning": false,
-   "note": "Prints a last-updated date beside every document. The strongest signal available across all six sources - it names which document moved and when.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:54+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - 24 documents recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
-   "latest_doc_date": "",
-   "links": []
+   "http": {
+    "status": 200,
+    "etag": "",
+    "last_modified": "",
+    "content_length": 82345,
+    "content_type": "text/html",
+    "final_url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited"
+   },
+   "links": [
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/default-rules-2026.pdf",
+     "text": "Default Rules",
+     "filename": "default-rules-2026.pdf",
+     "date": "23 March 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/digital-services-manual.pdf",
+     "text": "Digital Services Manual",
+     "filename": "digital-services-manual.pdf",
+     "date": "25 January 2023"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-procedures.pdf",
+     "text": "FCM Procedures",
+     "filename": "fcm-procedures.pdf",
+     "date": "17 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
+     "text": "FCM Product Specific Contract Terms and Eligibility Criteria Manual",
+     "filename": "fcm-product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
+     "date": "17 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-regulations.pdf",
+     "text": "FCM Regulations",
+     "filename": "fcm-regulations.pdf",
+     "date": "17 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/general-regulations.pdf",
+     "text": "General Regulations",
+     "filename": "general-regulations.pdf",
+     "date": "17 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/guaranteed-sponsored-clearing-procedures.pdf",
+     "text": "Guaranteed Sponsored Clearing Procedures",
+     "filename": "guaranteed-sponsored-clearing-procedures.pdf",
+     "date": "6 March 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/guaranteed-sponsored-clearing-regulations.pdf",
+     "text": "Guaranteed Sponsored Clearing Regulations",
+     "filename": "guaranteed-sponsored-clearing-regulations.pdf",
+     "date": "23 June 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/lch-sponsored-clearing-regulations.pdf",
+     "text": "Sponsored Clearing Regulations",
+     "filename": "lch-sponsored-clearing-regulations.pdf",
+     "date": "6 March 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
+     "text": "Product Specific Contract Terms and Eligibility Criteria Manual",
+     "filename": "product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
+     "date": "17 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-1-clearing-member-and-dealer-status.pdf",
+     "text": "Section 1 - Clearing Member and Dealer Status",
+     "filename": "section-1-clearing-member-and-dealer-status.pdf",
+     "date": "17 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2b-repoclear-service.pdf",
+     "text": "Section 2B - RepoClear Service",
+     "filename": "section-2b-repoclear-service.pdf",
+     "date": "13 February 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2c-swapclear-service.pdf",
+     "text": "Section 2C - SwapClear Service",
+     "filename": "section-2c-swapclear-service.pdf",
+     "date": "12 June 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2d-equityclear-service.pdf",
+     "text": "Section 2D - EquityClear Service",
+     "filename": "section-2d-equityclear-service.pdf",
+     "date": "10 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2i-forexclear-service.pdf",
+     "text": "Section 2I - ForexClear Service",
+     "filename": "section-2i-forexclear-service.pdf",
+     "date": "17 August 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2j-listed-interest-rates-service.pdf",
+     "text": "Section 2J - Listed Interest Rates Service",
+     "filename": "section-2j-listed-interest-rates-service.pdf",
+     "date": "30 June 2025"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-3-financial-transactions.pdf",
+     "text": "Section 3 - Financial Transactions",
+     "filename": "section-3-financial-transactions.pdf",
+     "date": "6 March 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-4-collateral.pdf",
+     "text": "Section 4 - Collateral",
+     "filename": "section-4-collateral.pdf",
+     "date": "20 July 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-5-disciplinary-proceedings.pdf",
+     "text": "Section 5 - Disciplinary Proceedings",
+     "filename": "section-5-disciplinary-proceedings.pdf",
+     "date": "12 November 2020"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-6-business-continuity.pdf",
+     "text": "Section 6 - Business Continuity",
+     "filename": "section-6-business-continuity.pdf",
+     "date": "30 June 2025"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-7-appeal-procedures.pdf",
+     "text": "Section 7 - Appeal Procedures",
+     "filename": "section-7-appeal-procedures.pdf",
+     "date": "12 November 2020"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-8-complaints.pdf",
+     "text": "Section 8 - Complaints",
+     "filename": "section-8-complaints.pdf",
+     "date": "7 February 2022"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/settlement-finality-regulations.pdf",
+     "text": "Settlement Finality Regulations",
+     "filename": "settlement-finality-regulations.pdf",
+     "date": "21 July 2025"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/sponsored-clearing-procedures.pdf",
+     "text": "Sponsored Clearing Procedures",
+     "filename": "sponsored-clearing-procedures.pdf",
+     "date": "6 March 2026"
+    }
+   ],
+   "doc_count": 24,
+   "latest_doc_date": "17 August 2026",
+   "change_detected_at": ""
   },
   {
    "id": "LCH_SA_INDEX",
@@ -33,17 +189,119 @@
    "label": "LCH SA Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa",
    "method": "published_dates",
-   "primary": true,
-   "early_warning": false,
-   "note": "Dates shown for some documents only. Several filenames carry the version date, so a changed filename is itself a signal.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:54+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - 15 documents recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
-   "latest_doc_date": "",
-   "links": []
+   "http": {
+    "status": 200,
+    "etag": "",
+    "last_modified": "",
+    "content_length": 216719,
+    "content_type": "text/html",
+    "final_url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa"
+   },
+   "links": [
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/cdsclear-rule-book-05-20-2026.pdf",
+     "text": "CDS Clearing Rule Book(PDF)",
+     "filename": "cdsclear-rule-book-05-20-2026.pdf",
+     "date": "May 22, 2026"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/cdsclear-section-5-procedures-30042025.pdf",
+     "text": "Section 5: CDS Clearing Operations(PDF)",
+     "filename": "cdsclear-section-5-procedures-30042025.pdf",
+     "date": "April 30, 2025"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/csdclear-section-1-procedures-30042025.pdf",
+     "text": "Section 1: Membership and CDS Dealer Status(PDF)",
+     "filename": "csdclear-section-1-procedures-30042025.pdf",
+     "date": "April 30, 2025"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/csdclear-section-4-procedures-30042025.pdf",
+     "text": "Section 4: Eligibility Requirements(PDF)",
+     "filename": "csdclear-section-4-procedures-30042025.pdf",
+     "date": "April 30, 2025"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/digitalassetclear-rulebook.pdf",
+     "text": "Digital Asset Derivatives Clearing Rulebook (English Version) 743.3KB • PDF",
+     "filename": "digitalassetclear-rulebook.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-fcm-bd-cds-regulations-21072025.pdf",
+     "text": "FCM/BD CDS Clearing Regulations(PDF)",
+     "filename": "lch-sa-cdsclear-fcm-bd-cds-regulations-21072025.pdf",
+     "date": "July 21, 2025"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-section-2-procedures.pdf",
+     "text": "Section 2: Margin, NPV Payment and Price Alignment(PDF)",
+     "filename": "lch-sa-cdsclear-section-2-procedures.pdf",
+     "date": "September 26, 2023"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-section-3-procedures.pdf",
+     "text": "Section 3: Collateral,Variation Margin and Cash Payment(PDF)",
+     "filename": "lch-sa-cdsclear-section-3-procedures.pdf",
+     "date": "September 26, 2023"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-section-6-procedures.pdf",
+     "text": "Section 6: CDS Default Fund(PDF)",
+     "filename": "lch-sa-cdsclear-section-6-procedures.pdf",
+     "date": "October 26, 2020"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-section-7-procedures.pdf",
+     "text": "Section 7: Business Continuity(PDF)",
+     "filename": "lch-sa-cdsclear-section-7-procedures.pdf",
+     "date": "December 16, 2014"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-section-8-procedures.pdf",
+     "text": "Section 8: Disciplinary Proceedings(PDF)",
+     "filename": "lch-sa-cdsclear-section-8-procedures.pdf",
+     "date": "October 26, 2020"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-section-9-procedures.pdf",
+     "text": "Section 9: Complaint Resolution(PDF)",
+     "filename": "lch-sa-cdsclear-section-9-procedures.pdf",
+     "date": "May 09, 2012"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-cdsclear-supplement.pdf",
+     "text": "CDS Clearing Supplement(PDF)",
+     "filename": "lch-sa-cdsclear-supplement.pdf",
+     "date": "September 26, 2023"
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-clearing-rulebook-en.pdf",
+     "text": "Rulebook English Version 985.6KB • PDF",
+     "filename": "lch-sa-clearing-rulebook-en.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-sa/lch-sa-compensation-rules-fr.pdf",
+     "text": "Rulebook French Version 1.2MB • PDF",
+     "filename": "lch-sa-compensation-rules-fr.pdf",
+     "date": ""
+    }
+   ],
+   "doc_count": 15,
+   "latest_doc_date": "May 22, 2026",
+   "change_detected_at": ""
   },
   {
    "id": "CME_SC_INDEX",
@@ -52,17 +310,65 @@
    "label": "CME Securities Clearing Rulebook Page",
    "url": "https://www.cmegroup.com/rulebook/cmesc/",
    "method": "link_manifest",
-   "primary": true,
-   "early_warning": false,
-   "note": "No dates published. Diff the set of document links to catch additions and retargeting.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:55+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - 6 documents recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
+   "http": {
+    "status": 200,
+    "etag": "",
+    "last_modified": "",
+    "content_length": 157365,
+    "content_type": "text/html",
+    "final_url": "https://www.cmegroup.com/rulebook/cmesc/"
+   },
+   "links": [
+    {
+     "url": "https://www.cmegroup.com/files/terms-of-use.pdf",
+     "text": "Terms of Use",
+     "filename": "terms-of-use.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/investor-relations/files/cme-group-named-worlds-most-valuable-exchange.pdf",
+     "text": "The world's most valuable exchange brand Learn more about Brand Finance naming CME Group the most valuable exchange brand for the 11th year in a row.",
+     "filename": "cme-group-named-worlds-most-valuable-exchange.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/investor-relations/files/statement-on-modern-slavery.pdf",
+     "text": "Modern Slavery Act Transparency Statement",
+     "filename": "statement-on-modern-slavery.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf",
+     "text": "Rules of CME Securities Clearing Inc.",
+     "filename": "CMESC%20Rulebook.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/rulebook/CMESC/cmesc-bylaws.pdf",
+     "text": "CMESC Bylaws",
+     "filename": "cmesc-bylaws.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/rulebook/CMESC/cmesc-certificate-of-incorporation.pdf",
+     "text": "CMESC Certificate of Incorporation",
+     "filename": "cmesc-certificate-of-incorporation.pdf",
+     "date": ""
+    }
+   ],
+   "doc_count": 6,
    "latest_doc_date": "",
-   "links": []
+   "change_detected_at": ""
   },
   {
    "id": "CME_SC_PDF",
@@ -71,17 +377,31 @@
    "label": "CME Securities Clearing Rulebook (PDF)",
    "url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf",
    "method": "content_hash",
-   "primary": true,
-   "early_warning": false,
-   "note": "Overwritten in place, so hashing the file is the only way to see the text change.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:55+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - baseline recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
-   "latest_doc_date": "",
-   "links": []
+   "http": {
+    "status": 200,
+    "etag": "\"e964b-657288fbf0b10\"",
+    "last_modified": "Wed, 22 Jul 2026 00:53:02 GMT",
+    "content_length": 955979,
+    "content_type": "application/pdf",
+    "final_url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf"
+   },
+   "hash": "f78dcef16db6c12ffe94ed350ddf639b8827ce731e951b171b4519f21c58d4b1",
+   "marker": {
+    "modDate": "D:20260721151313-05'00'",
+    "creationDate": "D:20260721151313-05'00'",
+    "pages": 155
+   },
+   "change_detected_at": ""
   },
   {
    "id": "CME_RULE_FILINGS",
@@ -90,17 +410,179 @@
    "label": "CME Rule Filings",
    "url": "https://www.cmegroup.com/market-regulation/rule-filings.html",
    "method": "link_manifest",
-   "primary": false,
-   "early_warning": true,
-   "note": "Filings normally appear before the rulebook PDF is republished. Early warning, not a rulebook source.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:55+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - 25 documents recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
+   "http": {
+    "status": 200,
+    "etag": "",
+    "last_modified": "",
+    "content_length": 182993,
+    "content_type": "text/html",
+    "final_url": "https://www.cmegroup.com/market-regulation/rule-filings.html"
+   },
+   "links": [
+    {
+     "url": "https://www.cmegroup.com/files/terms-of-use.pdf",
+     "text": "Terms of Use",
+     "filename": "terms-of-use.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/investor-relations/files/cme-group-named-worlds-most-valuable-exchange.pdf",
+     "text": "The world's most valuable exchange brand Learn more about Brand Finance naming CME Group the most valuable exchange brand for the 11th year in a row.",
+     "filename": "cme-group-named-worlds-most-valuable-exchange.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/investor-relations/files/statement-on-modern-slavery.pdf",
+     "text": "Modern Slavery Act Transparency Statement",
+     "filename": "statement-on-modern-slavery.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/2026/sec-rule-filings-2026.pdf",
+     "text": "2026",
+     "filename": "sec-rule-filings-2026.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/cftc-rule-filings-2011.pdf",
+     "text": "2011",
+     "filename": "cftc-rule-filings-2011.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/cftc-rule-filings-2012.pdf",
+     "text": "2012",
+     "filename": "cftc-rule-filings-2012.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/cftc-rule-filings-2013.pdf",
+     "text": "2013",
+     "filename": "cftc-rule-filings-2013.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/cftc-rule-filings-2014.pdf",
+     "text": "2014",
+     "filename": "cftc-rule-filings-2014.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/cftc-rule-filings-2015.pdf",
+     "text": "2015",
+     "filename": "cftc-rule-filings-2015.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/sec-rule-filings-2011.pdf",
+     "text": "2011",
+     "filename": "sec-rule-filings-2011.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/sec-rule-filings-2012.pdf",
+     "text": "2012",
+     "filename": "sec-rule-filings-2012.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/sec-rule-filings-2013.pdf",
+     "text": "2013",
+     "filename": "sec-rule-filings-2013.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/sec-rule-filings-2014.pdf",
+     "text": "2014",
+     "filename": "sec-rule-filings-2014.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/files/sec-rule-filings-2015.pdf",
+     "text": "2015",
+     "filename": "sec-rule-filings-2015.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2016/cftc-rule-filings-2016.pdf",
+     "text": "2016",
+     "filename": "cftc-rule-filings-2016.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2017/cftc-rule-filings-2017.pdf",
+     "text": "2017",
+     "filename": "cftc-rule-filings-2017.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2018/cftc-rule-filings-2018.pdf",
+     "text": "2018",
+     "filename": "cftc-rule-filings-2018.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2019/cftc-rule-filings-2019.pdf",
+     "text": "2019",
+     "filename": "cftc-rule-filings-2019.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2020/cftc-rule-filings-2020.pdf",
+     "text": "2020",
+     "filename": "cftc-rule-filings-2020.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2021/cftc-rule-filings-2021.pdf",
+     "text": "2021",
+     "filename": "cftc-rule-filings-2021.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2022/cftc-rule-filings-2022.pdf",
+     "text": "2022",
+     "filename": "cftc-rule-filings-2022.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2023/cftc-rule-filings-2023.pdf",
+     "text": "2023",
+     "filename": "cftc-rule-filings-2023.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2024/cftc-rule-filings-2024.pdf",
+     "text": "2024",
+     "filename": "cftc-rule-filings-2024.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2025/cftc-rule-filings-2025.pdf",
+     "text": "2025",
+     "filename": "cftc-rule-filings-2025.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.cmegroup.com/market-regulation/rule-filings/2026/cftc-rule-filings-2026.pdf",
+     "text": "2026",
+     "filename": "cftc-rule-filings-2026.pdf",
+     "date": ""
+    }
+   ],
+   "doc_count": 25,
    "latest_doc_date": "",
-   "links": []
+   "change_detected_at": ""
   },
   {
    "id": "ICE_EU_PDF",
@@ -109,17 +591,31 @@
    "label": "ICE Clear Europe Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf",
    "method": "content_hash",
-   "primary": true,
-   "early_warning": false,
-   "note": "Stable URL, overwritten in place. Cover page prints a month and year - extracted as a readable version marker.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:56+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - baseline recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
-   "latest_doc_date": "",
-   "links": []
+   "http": {
+    "status": 200,
+    "etag": "\"264777-645fd86b7d1f8\"",
+    "last_modified": "Mon, 15 Dec 2025 13:24:09 GMT",
+    "content_length": 2508663,
+    "content_type": "application/pdf",
+    "final_url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf"
+   },
+   "hash": "f12177b41f50c9972b2109faa28f12a421fc4729a378a282c5802260c3a9d5aa",
+   "marker": {
+    "modDate": "D:20251208180609Z",
+    "creationDate": "D:20251208180509Z",
+    "pages": 478
+   },
+   "change_detected_at": ""
   },
   {
    "id": "ICE_CC_PDF",
@@ -128,17 +624,31 @@
    "label": "ICE Clear Credit Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
    "method": "content_hash",
-   "primary": true,
-   "early_warning": false,
-   "note": "Carries a copyright and revision line that moves with each amendment.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:56+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - baseline recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
-   "latest_doc_date": "",
-   "links": []
+   "http": {
+    "status": 200,
+    "etag": "\"1e3f03-6586184a6fb26\"",
+    "last_modified": "Thu, 06 Aug 2026 14:15:20 GMT",
+    "content_length": 1982211,
+    "content_type": "application/pdf",
+    "final_url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf"
+   },
+   "hash": "c9d9158a99b97bc691a170dc9025c656b47c5974090a5a4b165eed90a35f1fb3",
+   "marker": {
+    "modDate": "D:20260806090948-05'00'",
+    "creationDate": "D:20260806090822-05'00'",
+    "pages": 431
+   },
+   "change_detected_at": ""
   },
   {
    "id": "ICE_CC_TREASURY_PDF",
@@ -147,17 +657,31 @@
    "label": "ICE Clear Credit Treasury Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf",
    "method": "content_hash",
-   "primary": true,
-   "early_warning": false,
-   "note": "Separate rulebook for Treasury clearing. Prints an explicit revision date.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:57+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - baseline recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
-   "latest_doc_date": "",
-   "links": []
+   "http": {
+    "status": 200,
+    "etag": "\"122ffd-6579ae64e5e22\"",
+    "last_modified": "Mon, 27 Jul 2026 17:17:40 GMT",
+    "content_length": 1191933,
+    "content_type": "application/pdf",
+    "final_url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf"
+   },
+   "hash": "f51f7a78e9ef66be8f90ac772507bffe8c8d95c3b69670bf9468d66563b6501c",
+   "marker": {
+    "modDate": "D:20260727110154-05'00'",
+    "creationDate": "D:20260727110154-05'00'",
+    "pages": 204
+   },
+   "change_detected_at": ""
   },
   {
    "id": "ICE_US_PDF",
@@ -166,17 +690,32 @@
    "label": "ICE Clear US Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
    "method": "content_hash",
-   "primary": true,
-   "early_warning": false,
-   "note": "Stable URL, overwritten in place.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:57+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - baseline recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
-   "latest_doc_date": "",
-   "links": []
+   "http": {
+    "status": 200,
+    "etag": "\"73176-61e64166565e1\"",
+    "last_modified": "Mon, 29 Jul 2024 14:58:01 GMT",
+    "content_length": 471414,
+    "content_type": "application/pdf",
+    "final_url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf"
+   },
+   "hash": "86b6fab8a65307a176fc5a30f790adb33c7871c8564e18870c09d2d99ef2bcbe",
+   "marker": {
+    "modDate": "D:20240727101800-04'00'",
+    "creationDate": "D:20240727101800-04'00'",
+    "pages": 72,
+    "cover_date": "July 29, 2024"
+   },
+   "change_detected_at": ""
   },
   {
    "id": "ICE_EU_REG",
@@ -185,17 +724,209 @@
    "label": "ICE Clear Europe Regulation Page",
    "url": "https://www.ice.com/clear-europe/regulation",
    "method": "link_manifest",
-   "primary": false,
-   "early_warning": false,
-   "note": "Regulatory disclosure page, not a rulebook index. Watched only to catch new documents being posted.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:57+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - 30 documents recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
+   "http": {
+    "status": 200,
+    "etag": "",
+    "last_modified": "Fri, 14 Aug 2026 04:05:25 GMT",
+    "content_length": 134828,
+    "content_type": "text/html",
+    "final_url": "https://www.ice.com/clear-europe/regulation"
+   },
+   "links": [
+    {
+     "url": "https://www.ice.com/publicdocs/Modern_Slavery_Statement.pdf",
+     "text": "Modern Slavery Statement",
+     "filename": "Modern_Slavery_Statement.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/Annex_1_to_ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
+     "text": "Annex 1 to ICEU Response to Bank CP: Ensuring the resilience of CCPs - November 2025",
+     "filename": "Annex_1_to_ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/Annex_2_to_ICEU_response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
+     "text": "Annex 2 to ICEU Response to Bank CP: Ensuring the resilience of CCPs - November 2025",
+     "filename": "Annex_2_to_ICEU_response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/Clear_Europe_Compensation_Policy.pdf",
+     "text": "Compensation Policy",
+     "filename": "Clear_Europe_Compensation_Policy.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/Clear_Europe_Risks_Associated_Clearing_Services.pdf",
+     "text": "Risks Associated with Clearing Services",
+     "filename": "Clear_Europe_Risks_Associated_Clearing_Services.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICEU_EMIR_Disclosure_Statement.pdf",
+     "text": "Disclosure Statement pursuant to Article 39(7) of EMIR",
+     "filename": "ICEU_EMIR_Disclosure_Statement.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_25.pdf",
+     "text": "ICEU Response to Bank CP: Ensuring the resilience of CCPs - November 2025",
+     "filename": "ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_25.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Disclosure_Framework.pdf",
+     "text": "ICE Clear Europe PFMI Disclosure Statement",
+     "filename": "ICE_Clear_Europe_Disclosure_Framework.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Jurisdictions.pdf",
+     "text": "ICE Clear Europe Jurisdictions",
+     "filename": "ICE_Clear_Europe_Jurisdictions.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2019_UK_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2019 UK GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2019_UK_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2019_US_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2019 US GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2019_US_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2020_UK_GAAP_.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2020 UK GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2020_UK_GAAP_.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2020_US_GAAP_.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2020 US GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2020_US_GAAP_.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2021_UK_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2021 UK GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2021_UK_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2021_US_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2021 US GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2021_US_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2022_UK_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2022 UK GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2022_UK_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2022_US_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2022 US GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2022_US_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2023_UK_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2023 UK GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2023_UK_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2023_US_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2023 US GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2023_US_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2024_UK_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2024 UK GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2024_UK_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2024_US_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2024 US GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2024_US_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2025_UK_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2025 UK GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2025_UK_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2025_US_GAAP.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2025 US GAAP",
+     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2025_US_GAAP.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2016",
+     "filename": "ICE_Clear_Europe_Statutory_Accounts.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts_2014.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2015",
+     "filename": "ICE_Clear_Europe_Statutory_Accounts_2014.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts_2017.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2017",
+     "filename": "ICE_Clear_Europe_Statutory_Accounts_2017.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts_2018.pdf",
+     "text": "ICE Clear Europe Limited Statutory Accounts 2018",
+     "filename": "ICE_Clear_Europe_Statutory_Accounts_2018.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/Organisational_Structure_Objectives_Strategy.pdf",
+     "text": "Organisational Structure, Objectives and Strategy (supplementary information)",
+     "filename": "Organisational_Structure_Objectives_Strategy.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/QCCP_Status_of_ICE_Clear_Europe_Limited.pdf",
+     "text": "Details of ICE Clear Europe’s QCCP status can be found here",
+     "filename": "QCCP_Status_of_ICE_Clear_Europe_Limited.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_europe/circulars/C23115.pdf",
+     "text": "Circular 23/115",
+     "filename": "C23115.pdf",
+     "date": ""
+    }
+   ],
+   "doc_count": 30,
    "latest_doc_date": "",
-   "links": []
+   "change_detected_at": ""
   },
   {
    "id": "ICE_CC_REG",
@@ -204,17 +935,107 @@
    "label": "ICE Clear Credit Regulation Page",
    "url": "https://www.ice.com/clear-credit/regulation",
    "method": "link_manifest",
-   "primary": false,
-   "early_warning": false,
-   "note": "Regulatory disclosure page, not a rulebook index. Watched only to catch new documents being posted.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:58+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - 13 documents recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
+   "http": {
+    "status": 200,
+    "etag": "",
+    "last_modified": "",
+    "content_length": 95621,
+    "content_type": "text/html",
+    "final_url": "https://www.ice.com/clear-credit/regulation"
+   },
+   "links": [
+    {
+     "url": "https://www.ice.com/publicdocs/CME_DTCC_ICE_OCC_Letter.pdf",
+     "text": "March 2015 - U.S. Regulatory Oversight of Central Counterparties",
+     "filename": "CME_DTCC_ICE_OCC_Letter.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/ICC_Default_Auction_Procedures.pdf",
+     "text": "ICE Clear Credit Default Auction Procedures",
+     "filename": "ICC_Default_Auction_Procedures.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/ICC_Secondary_Auction_Procedures.pdf",
+     "text": "ICE Clear Credit Secondary Auction Procedures",
+     "filename": "ICC_Secondary_Auction_Procedures.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/Modern_Slavery_Statement.pdf",
+     "text": "Modern Slavery Statement",
+     "filename": "Modern_Slavery_Statement.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/Exercise_Procedures.pdf",
+     "text": "ICE Clear Credit Exercise Procedures",
+     "filename": "Exercise_Procedures.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICEClearCredit_DisclosureFramework.pdf",
+     "text": "ICE Clear Credit Disclosure Framework",
+     "filename": "ICEClearCredit_DisclosureFramework.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Clearing_Eligible_Products.xls",
+     "text": "CDS Cleared Contracts",
+     "filename": "ICE_Clear_Credit_Clearing_Eligible_Products.xls",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Contract_Reference_Obligations_Procedures.pdf",
+     "text": "ICE Clear Credit Contract Reference Obligations Procedures",
+     "filename": "ICE_Clear_Credit_Contract_Reference_Obligations_Procedures.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Delivery_Procedures.pdf",
+     "text": "ICE Clear Credit Delivery Procedures",
+     "filename": "ICE_Clear_Credit_Delivery_Procedures.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Physical_Settlement_and_Notices_Terms.pdf",
+     "text": "ICE Clear Credit Physical Settlement and Notices Terms",
+     "filename": "ICE_Clear_Credit_Physical_Settlement_and_Notices_Terms.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Regulation_and_Governance.pdf",
+     "text": "ICE Clear Credit Regulation and Governance",
+     "filename": "ICE_Clear_Credit_Regulation_and_Governance.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Restructuring_Procedures.pdf",
+     "text": "ICE Clear Credit Restructuring Procedures",
+     "filename": "ICE_Clear_Credit_Restructuring_Procedures.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
+     "text": "ICE Clear Credit Rulebook",
+     "filename": "ICE_Clear_Credit_Rules.pdf",
+     "date": ""
+    }
+   ],
+   "doc_count": 13,
    "latest_doc_date": "",
-   "links": []
+   "change_detected_at": ""
   },
   {
    "id": "ICE_US_REG",
@@ -223,17 +1044,53 @@
    "label": "ICE Clear US Regulation Page",
    "url": "https://www.ice.com/clear-us/regulation",
    "method": "link_manifest",
-   "primary": false,
-   "early_warning": false,
-   "note": "Regulatory disclosure page, not a rulebook index. Watched only to catch new documents being posted.",
-   "checked_at": "",
+   "checked_at": "2026-08-24T23:47:58+00:00",
    "ok": true,
    "changed": false,
-   "changes": [],
+   "changes": [
+    {
+     "kind": "baseline",
+     "detail": "First check - 4 documents recorded"
+    }
+   ],
    "error": "",
-   "change_detected_at": "",
+   "http": {
+    "status": 200,
+    "etag": "",
+    "last_modified": "",
+    "content_length": 89478,
+    "content_type": "text/html",
+    "final_url": "https://www.ice.com/clear-us/regulation"
+   },
+   "links": [
+    {
+     "url": "https://www.ice.com/publicdocs/Modern_Slavery_Statement.pdf",
+     "text": "Modern Slavery Statement",
+     "filename": "Modern_Slavery_Statement.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/clear_us/ICUS_DisclosureFramework.pdf",
+     "text": "ICE Clear U.S. Disclosure Framework",
+     "filename": "ICUS_DisclosureFramework.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_Bylaws.pdf",
+     "text": "ICE Clear U.S. By-Laws",
+     "filename": "ICE_Clear_Bylaws.pdf",
+     "date": ""
+    },
+    {
+     "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
+     "text": "ICE Clear U.S. Rules",
+     "filename": "ICE_Clear_US_Rules.pdf",
+     "date": ""
+    }
+   ],
+   "doc_count": 4,
    "latest_doc_date": "",
-   "links": []
+   "change_detected_at": ""
   }
  ]
 }
