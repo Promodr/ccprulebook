@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-02T10:40:46+00:00",
+ "generated_at": "2026-09-03T10:42:51+00:00",
  "summary": {
   "sources": 12,
   "changed": 0,
-  "broken": 0,
-  "healthy": 12
+  "broken": 7,
+  "healthy": 5
  },
  "sources": [
   {
@@ -14,7 +14,7 @@
    "label": "LCH Limited Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited",
    "method": "published_dates",
-   "checked_at": "2026-09-02T10:40:44+00:00",
+   "checked_at": "2026-09-03T10:42:49+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -184,7 +184,7 @@
    "label": "LCH SA Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa",
    "method": "published_dates",
-   "checked_at": "2026-09-02T10:40:45+00:00",
+   "checked_at": "2026-09-03T10:42:49+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -300,7 +300,7 @@
    "label": "CME Securities Clearing Rulebook Page",
    "url": "https://www.cmegroup.com/rulebook/cmesc/",
    "method": "link_manifest",
-   "checked_at": "2026-09-02T10:40:45+00:00",
+   "checked_at": "2026-09-03T10:42:50+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -309,7 +309,7 @@
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 157367,
+    "content_length": 157370,
     "content_type": "text/html",
     "final_url": "https://www.cmegroup.com/rulebook/cmesc/"
    },
@@ -362,7 +362,7 @@
    "label": "CME Securities Clearing Rulebook (PDF)",
    "url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-02T10:40:45+00:00",
+   "checked_at": "2026-09-03T10:42:50+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -390,7 +390,7 @@
    "label": "CME Rule Filings",
    "url": "https://www.cmegroup.com/market-regulation/rule-filings.html",
    "method": "link_manifest",
-   "checked_at": "2026-09-02T10:40:46+00:00",
+   "checked_at": "2026-09-03T10:42:50+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -399,7 +399,7 @@
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 182995,
+    "content_length": 182998,
     "content_type": "text/html",
     "final_url": "https://www.cmegroup.com/market-regulation/rule-filings.html"
    },
@@ -566,26 +566,12 @@
    "label": "ICE Clear Europe Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-02T10:40:46+00:00",
-   "ok": true,
+   "checked_at": "2026-09-03T10:42:50+00:00",
+   "ok": false,
    "changed": false,
    "changes": [],
-   "error": "",
-   "http": {
-    "status": 200,
-    "etag": "\"264777-645fd86b7d1f8\"",
-    "last_modified": "Mon, 15 Dec 2025 13:24:09 GMT",
-    "content_length": 2508663,
-    "content_type": "application/pdf",
-    "final_url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf"
-   },
-   "hash": "f12177b41f50c9972b2109faa28f12a421fc4729a378a282c5802260c3a9d5aa",
-   "marker": {
-    "modDate": "D:20251208180609Z",
-    "creationDate": "D:20251208180509Z",
-    "pages": 478
-   },
-   "change_detected_at": ""
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf'\nFor more information c",
+   "last_good": "2026-09-02T10:40:46+00:00"
   },
   {
    "id": "ICE_CC_PDF",
@@ -594,26 +580,12 @@
    "label": "ICE Clear Credit Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-02T10:40:46+00:00",
-   "ok": true,
+   "checked_at": "2026-09-03T10:42:51+00:00",
+   "ok": false,
    "changed": false,
    "changes": [],
-   "error": "",
-   "http": {
-    "status": 200,
-    "etag": "\"1e3f03-6586184a6fb26\"",
-    "last_modified": "Thu, 06 Aug 2026 14:15:20 GMT",
-    "content_length": 1982211,
-    "content_type": "application/pdf",
-    "final_url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf"
-   },
-   "hash": "c9d9158a99b97bc691a170dc9025c656b47c5974090a5a4b165eed90a35f1fb3",
-   "marker": {
-    "modDate": "D:20260806090948-05'00'",
-    "creationDate": "D:20260806090822-05'00'",
-    "pages": 431
-   },
-   "change_detected_at": ""
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf'\nFor more information check: ht",
+   "last_good": "2026-09-02T10:40:46+00:00"
   },
   {
    "id": "ICE_CC_TREASURY_PDF",
@@ -622,26 +594,12 @@
    "label": "ICE Clear Credit Treasury Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-02T10:40:46+00:00",
-   "ok": true,
+   "checked_at": "2026-09-03T10:42:51+00:00",
+   "ok": false,
    "changed": false,
    "changes": [],
-   "error": "",
-   "http": {
-    "status": 200,
-    "etag": "\"122ffd-6579ae64e5e22\"",
-    "last_modified": "Mon, 27 Jul 2026 17:17:40 GMT",
-    "content_length": 1191933,
-    "content_type": "application/pdf",
-    "final_url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf"
-   },
-   "hash": "f51f7a78e9ef66be8f90ac772507bffe8c8d95c3b69670bf9468d66563b6501c",
-   "marker": {
-    "modDate": "D:20260727110154-05'00'",
-    "creationDate": "D:20260727110154-05'00'",
-    "pages": 204
-   },
-   "change_detected_at": ""
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf'\nFor more inf",
+   "last_good": "2026-09-02T10:40:46+00:00"
   },
   {
    "id": "ICE_US_PDF",
@@ -650,27 +608,12 @@
    "label": "ICE Clear US Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-02T10:40:46+00:00",
-   "ok": true,
+   "checked_at": "2026-09-03T10:42:51+00:00",
+   "ok": false,
    "changed": false,
    "changes": [],
-   "error": "",
-   "http": {
-    "status": 200,
-    "etag": "\"73176-61e64166565e1\"",
-    "last_modified": "Mon, 29 Jul 2024 14:58:01 GMT",
-    "content_length": 471414,
-    "content_type": "application/pdf",
-    "final_url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf"
-   },
-   "hash": "86b6fab8a65307a176fc5a30f790adb33c7871c8564e18870c09d2d99ef2bcbe",
-   "marker": {
-    "modDate": "D:20240727101800-04'00'",
-    "creationDate": "D:20240727101800-04'00'",
-    "pages": 72,
-    "cover_date": "July 29, 2024"
-   },
-   "change_detected_at": ""
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf'\nFor more information check: htt",
+   "last_good": "2026-09-02T10:40:46+00:00"
   },
   {
    "id": "ICE_EU_REG",
@@ -679,204 +622,12 @@
    "label": "ICE Clear Europe Regulation Page",
    "url": "https://www.ice.com/clear-europe/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-09-02T10:40:46+00:00",
-   "ok": true,
+   "checked_at": "2026-09-03T10:42:51+00:00",
+   "ok": false,
    "changed": false,
    "changes": [],
-   "error": "",
-   "http": {
-    "status": 200,
-    "etag": "",
-    "last_modified": "",
-    "content_length": 135005,
-    "content_type": "text/html",
-    "final_url": "https://www.ice.com/clear-europe/regulation"
-   },
-   "links": [
-    {
-     "url": "https://www.ice.com/publicdocs/Modern_Slavery_Statement.pdf",
-     "text": "Modern Slavery Statement",
-     "filename": "Modern_Slavery_Statement.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/Annex_1_to_ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
-     "text": "Annex 1 to ICEU Response to Bank CP: Ensuring the resilience of CCPs - November 2025",
-     "filename": "Annex_1_to_ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/Annex_2_to_ICEU_response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
-     "text": "Annex 2 to ICEU Response to Bank CP: Ensuring the resilience of CCPs - November 2025",
-     "filename": "Annex_2_to_ICEU_response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_2025.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/Clear_Europe_Compensation_Policy.pdf",
-     "text": "Compensation Policy",
-     "filename": "Clear_Europe_Compensation_Policy.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/Clear_Europe_Risks_Associated_Clearing_Services.pdf",
-     "text": "Risks Associated with Clearing Services",
-     "filename": "Clear_Europe_Risks_Associated_Clearing_Services.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICEU_EMIR_Disclosure_Statement.pdf",
-     "text": "Disclosure Statement pursuant to Article 39(7) of EMIR",
-     "filename": "ICEU_EMIR_Disclosure_Statement.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_25.pdf",
-     "text": "ICEU Response to Bank CP: Ensuring the resilience of CCPs - November 2025",
-     "filename": "ICEU_Response_to_Bank_CP_-_Ensuring_the_resilience_of_CCPs_November_25.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Disclosure_Framework.pdf",
-     "text": "ICE Clear Europe PFMI Disclosure Statement",
-     "filename": "ICE_Clear_Europe_Disclosure_Framework.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Jurisdictions.pdf",
-     "text": "ICE Clear Europe Jurisdictions",
-     "filename": "ICE_Clear_Europe_Jurisdictions.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2019_UK_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2019 UK GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2019_UK_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2019_US_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2019 US GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2019_US_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2020_UK_GAAP_.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2020 UK GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2020_UK_GAAP_.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2020_US_GAAP_.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2020 US GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2020_US_GAAP_.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2021_UK_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2021 UK GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2021_UK_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2021_US_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2021 US GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2021_US_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2022_UK_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2022 UK GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2022_UK_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2022_US_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2022 US GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2022_US_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2023_UK_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2023 UK GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2023_UK_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2023_US_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2023 US GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2023_US_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2024_UK_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2024 UK GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2024_UK_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2024_US_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2024 US GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2024_US_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2025_UK_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2025 UK GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2025_UK_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Limited_Statutory_Accounts_2025_US_GAAP.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2025 US GAAP",
-     "filename": "ICE_Clear_Europe_Limited_Statutory_Accounts_2025_US_GAAP.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2016",
-     "filename": "ICE_Clear_Europe_Statutory_Accounts.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts_2014.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2015",
-     "filename": "ICE_Clear_Europe_Statutory_Accounts_2014.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts_2017.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2017",
-     "filename": "ICE_Clear_Europe_Statutory_Accounts_2017.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/ICE_Clear_Europe_Statutory_Accounts_2018.pdf",
-     "text": "ICE Clear Europe Limited Statutory Accounts 2018",
-     "filename": "ICE_Clear_Europe_Statutory_Accounts_2018.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/Organisational_Structure_Objectives_Strategy.pdf",
-     "text": "Organisational Structure, Objectives and Strategy (supplementary information)",
-     "filename": "Organisational_Structure_Objectives_Strategy.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/QCCP_Status_of_ICE_Clear_Europe_Limited.pdf",
-     "text": "Details of ICE Clear Europe’s QCCP status can be found here",
-     "filename": "QCCP_Status_of_ICE_Clear_Europe_Limited.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_europe/circulars/C23115.pdf",
-     "text": "Circular 23/115",
-     "filename": "C23115.pdf",
-     "date": ""
-    }
-   ],
-   "doc_count": 30,
-   "latest_doc_date": "",
-   "change_detected_at": ""
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://www.ice.com/clear-europe/regulation'\nFor more information check: https://developer.mozilla.org",
+   "last_good": "2026-09-02T10:40:46+00:00"
   },
   {
    "id": "ICE_CC_REG",
@@ -885,102 +636,12 @@
    "label": "ICE Clear Credit Regulation Page",
    "url": "https://www.ice.com/clear-credit/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-09-02T10:40:46+00:00",
-   "ok": true,
+   "checked_at": "2026-09-03T10:42:51+00:00",
+   "ok": false,
    "changed": false,
    "changes": [],
-   "error": "",
-   "http": {
-    "status": 200,
-    "etag": "",
-    "last_modified": "Tue, 01 Sep 2026 15:39:52 GMT",
-    "content_length": 95762,
-    "content_type": "text/html",
-    "final_url": "https://www.ice.com/clear-credit/regulation"
-   },
-   "links": [
-    {
-     "url": "https://www.ice.com/publicdocs/CME_DTCC_ICE_OCC_Letter.pdf",
-     "text": "March 2015 - U.S. Regulatory Oversight of Central Counterparties",
-     "filename": "CME_DTCC_ICE_OCC_Letter.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/ICC_Default_Auction_Procedures.pdf",
-     "text": "ICE Clear Credit Default Auction Procedures",
-     "filename": "ICC_Default_Auction_Procedures.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/ICC_Secondary_Auction_Procedures.pdf",
-     "text": "ICE Clear Credit Secondary Auction Procedures",
-     "filename": "ICC_Secondary_Auction_Procedures.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/Modern_Slavery_Statement.pdf",
-     "text": "Modern Slavery Statement",
-     "filename": "Modern_Slavery_Statement.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/Exercise_Procedures.pdf",
-     "text": "ICE Clear Credit Exercise Procedures",
-     "filename": "Exercise_Procedures.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICEClearCredit_DisclosureFramework.pdf",
-     "text": "ICE Clear Credit Disclosure Framework",
-     "filename": "ICEClearCredit_DisclosureFramework.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Clearing_Eligible_Products.xls",
-     "text": "CDS Cleared Contracts",
-     "filename": "ICE_Clear_Credit_Clearing_Eligible_Products.xls",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Contract_Reference_Obligations_Procedures.pdf",
-     "text": "ICE Clear Credit Contract Reference Obligations Procedures",
-     "filename": "ICE_Clear_Credit_Contract_Reference_Obligations_Procedures.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Delivery_Procedures.pdf",
-     "text": "ICE Clear Credit Delivery Procedures",
-     "filename": "ICE_Clear_Credit_Delivery_Procedures.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Physical_Settlement_and_Notices_Terms.pdf",
-     "text": "ICE Clear Credit Physical Settlement and Notices Terms",
-     "filename": "ICE_Clear_Credit_Physical_Settlement_and_Notices_Terms.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Regulation_and_Governance.pdf",
-     "text": "ICE Clear Credit Regulation and Governance",
-     "filename": "ICE_Clear_Credit_Regulation_and_Governance.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Restructuring_Procedures.pdf",
-     "text": "ICE Clear Credit Restructuring Procedures",
-     "filename": "ICE_Clear_Credit_Restructuring_Procedures.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
-     "text": "ICE Clear Credit Rulebook",
-     "filename": "ICE_Clear_Credit_Rules.pdf",
-     "date": ""
-    }
-   ],
-   "doc_count": 13,
-   "latest_doc_date": "",
-   "change_detected_at": ""
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://www.ice.com/clear-credit/regulation'\nFor more information check: https://developer.mozilla.org",
+   "last_good": "2026-09-02T10:40:46+00:00"
   },
   {
    "id": "ICE_US_REG",
@@ -989,48 +650,12 @@
    "label": "ICE Clear US Regulation Page",
    "url": "https://www.ice.com/clear-us/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-09-02T10:40:46+00:00",
-   "ok": true,
+   "checked_at": "2026-09-03T10:42:51+00:00",
+   "ok": false,
    "changed": false,
    "changes": [],
-   "error": "",
-   "http": {
-    "status": 200,
-    "etag": "",
-    "last_modified": "Tue, 01 Sep 2026 15:24:39 GMT",
-    "content_length": 89619,
-    "content_type": "text/html",
-    "final_url": "https://www.ice.com/clear-us/regulation"
-   },
-   "links": [
-    {
-     "url": "https://www.ice.com/publicdocs/Modern_Slavery_Statement.pdf",
-     "text": "Modern Slavery Statement",
-     "filename": "Modern_Slavery_Statement.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/clear_us/ICUS_DisclosureFramework.pdf",
-     "text": "ICE Clear U.S. Disclosure Framework",
-     "filename": "ICUS_DisclosureFramework.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_Bylaws.pdf",
-     "text": "ICE Clear U.S. By-Laws",
-     "filename": "ICE_Clear_Bylaws.pdf",
-     "date": ""
-    },
-    {
-     "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
-     "text": "ICE Clear U.S. Rules",
-     "filename": "ICE_Clear_US_Rules.pdf",
-     "date": ""
-    }
-   ],
-   "doc_count": 4,
-   "latest_doc_date": "",
-   "change_detected_at": ""
+   "error": "HTTPStatusError: Client error '403 Forbidden' for url 'https://www.ice.com/clear-us/regulation'\nFor more information check: https://developer.mozilla.org/en-",
+   "last_good": "2026-09-02T10:40:46+00:00"
   }
  ]
 }
