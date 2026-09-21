@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-09-20T10:40:52+00:00",
+ "generated_at": "2026-09-21T12:03:44+00:00",
  "summary": {
   "sources": 12,
-  "changed": 0,
+  "changed": 1,
   "broken": 0,
-  "healthy": 12
+  "healthy": 11
  },
  "sources": [
   {
@@ -14,16 +14,22 @@
    "label": "LCH Limited Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited",
    "method": "published_dates",
-   "checked_at": "2026-09-20T10:40:49+00:00",
+   "checked_at": "2026-09-21T12:03:41+00:00",
    "ok": true,
-   "changed": false,
-   "changes": [],
+   "changed": true,
+   "changes": [
+    {
+     "kind": "updated",
+     "detail": "Section 2D - EquityClear Service - date changed to 21 September 2026 (was 10 August 2026)",
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2d-equityclear-service.pdf"
+    }
+   ],
    "error": "",
    "http": {
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 82396,
+    "content_length": 82394,
     "content_type": "text/html",
     "final_url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited"
    },
@@ -110,7 +116,7 @@
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2d-equityclear-service.pdf",
      "text": "Section 2D - EquityClear Service",
      "filename": "section-2d-equityclear-service.pdf",
-     "date": "10 August 2026"
+     "date": "21 September 2026"
     },
     {
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2i-forexclear-service.pdf",
@@ -174,8 +180,8 @@
     }
    ],
    "doc_count": 24,
-   "latest_doc_date": "10 September 2026",
-   "change_detected_at": "2026-09-10T10:40:01+00:00"
+   "latest_doc_date": "21 September 2026",
+   "change_detected_at": "2026-09-21T12:03:41+00:00"
   },
   {
    "id": "LCH_SA_INDEX",
@@ -184,7 +190,7 @@
    "label": "LCH SA Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa",
    "method": "published_dates",
-   "checked_at": "2026-09-20T10:40:49+00:00",
+   "checked_at": "2026-09-21T12:03:42+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -193,7 +199,7 @@
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 216661,
+    "content_length": 216656,
     "content_type": "text/html",
     "final_url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa"
    },
@@ -300,7 +306,7 @@
    "label": "CME Securities Clearing Rulebook Page",
    "url": "https://www.cmegroup.com/rulebook/cmesc/",
    "method": "link_manifest",
-   "checked_at": "2026-09-20T10:40:50+00:00",
+   "checked_at": "2026-09-21T12:03:42+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -309,7 +315,7 @@
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 157388,
+    "content_length": 157390,
     "content_type": "text/html",
     "final_url": "https://www.cmegroup.com/rulebook/cmesc/"
    },
@@ -362,15 +368,15 @@
    "label": "CME Securities Clearing Rulebook (PDF)",
    "url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-20T10:40:50+00:00",
+   "checked_at": "2026-09-21T12:03:43+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
    "error": "",
    "http": {
     "status": 200,
-    "etag": "\"e964b-657285d30fee2\"",
-    "last_modified": "Wed, 22 Jul 2026 00:38:54 GMT",
+    "etag": "\"e964b-657288fbf0b10\"",
+    "last_modified": "Wed, 22 Jul 2026 00:53:02 GMT",
     "content_length": 955979,
     "content_type": "application/pdf",
     "final_url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf"
@@ -390,7 +396,7 @@
    "label": "CME Rule Filings",
    "url": "https://www.cmegroup.com/market-regulation/rule-filings.html",
    "method": "link_manifest",
-   "checked_at": "2026-09-20T10:40:50+00:00",
+   "checked_at": "2026-09-21T12:03:43+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -399,7 +405,7 @@
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 183016,
+    "content_length": 183018,
     "content_type": "text/html",
     "final_url": "https://www.cmegroup.com/market-regulation/rule-filings.html"
    },
@@ -566,7 +572,7 @@
    "label": "ICE Clear Europe Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-20T10:40:50+00:00",
+   "checked_at": "2026-09-21T12:03:43+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -594,7 +600,7 @@
    "label": "ICE Clear Credit Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-20T10:40:51+00:00",
+   "checked_at": "2026-09-21T12:03:43+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -622,7 +628,7 @@
    "label": "ICE Clear Credit Treasury Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-20T10:40:51+00:00",
+   "checked_at": "2026-09-21T12:03:43+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -650,7 +656,7 @@
    "label": "ICE Clear US Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-09-20T10:40:51+00:00",
+   "checked_at": "2026-09-21T12:03:44+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -679,7 +685,7 @@
    "label": "ICE Clear Europe Regulation Page",
    "url": "https://www.ice.com/clear-europe/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-09-20T10:40:51+00:00",
+   "checked_at": "2026-09-21T12:03:44+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -687,7 +693,7 @@
    "http": {
     "status": 200,
     "etag": "",
-    "last_modified": "Fri, 18 Sep 2026 03:48:53 GMT",
+    "last_modified": "Mon, 21 Sep 2026 05:51:00 GMT",
     "content_length": 134987,
     "content_type": "text/html",
     "final_url": "https://www.ice.com/clear-europe/regulation"
@@ -885,7 +891,7 @@
    "label": "ICE Clear Credit Regulation Page",
    "url": "https://www.ice.com/clear-credit/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-09-20T10:40:52+00:00",
+   "checked_at": "2026-09-21T12:03:44+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -893,7 +899,7 @@
    "http": {
     "status": 200,
     "etag": "",
-    "last_modified": "Thu, 17 Sep 2026 23:28:28 GMT",
+    "last_modified": "Mon, 21 Sep 2026 12:03:44 GMT",
     "content_length": 95762,
     "content_type": "text/html",
     "final_url": "https://www.ice.com/clear-credit/regulation"
@@ -989,7 +995,7 @@
    "label": "ICE Clear US Regulation Page",
    "url": "https://www.ice.com/clear-us/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-09-20T10:40:52+00:00",
+   "checked_at": "2026-09-21T12:03:44+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -997,7 +1003,7 @@
    "http": {
     "status": 200,
     "etag": "",
-    "last_modified": "Fri, 18 Sep 2026 00:46:00 GMT",
+    "last_modified": "Mon, 21 Sep 2026 12:03:44 GMT",
     "content_length": 89619,
     "content_type": "text/html",
     "final_url": "https://www.ice.com/clear-us/regulation"
