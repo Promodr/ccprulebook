@@ -1,10 +1,10 @@
 {
- "generated_at": "2026-11-16T14:51:28+00:00",
+ "generated_at": "2026-11-17T15:31:23+00:00",
  "summary": {
   "sources": 12,
-  "changed": 0,
+  "changed": 1,
   "broken": 0,
-  "healthy": 12
+  "healthy": 11
  },
  "sources": [
   {
@@ -14,16 +14,47 @@
    "label": "LCH Limited Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited",
    "method": "published_dates",
-   "checked_at": "2026-11-16T14:51:25+00:00",
+   "checked_at": "2026-11-17T15:31:20+00:00",
    "ok": true,
-   "changed": false,
-   "changes": [],
+   "changed": true,
+   "changes": [
+    {
+     "kind": "updated",
+     "detail": "FCM Procedures - date changed to 17 November 2026 (was 17 August 2026)",
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-procedures.pdf"
+    },
+    {
+     "kind": "updated",
+     "detail": "FCM Product Specific Contract Terms and Eligibility Criteria Manual - date changed to 17 November 2026 (was 17 August 2026)",
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-product-specific-contract-terms-and-eligibility-criteria-manual.pdf"
+    },
+    {
+     "kind": "updated",
+     "detail": "FCM Regulations - date changed to 17 November 2026 (was 17 August 2026)",
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-regulations.pdf"
+    },
+    {
+     "kind": "updated",
+     "detail": "General Regulations - date changed to 17 November 2026 (was 10 September 2026)",
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/general-regulations.pdf"
+    },
+    {
+     "kind": "updated",
+     "detail": "Product Specific Contract Terms and Eligibility Criteria Manual - date changed to 17 November 2026 (was 17 August 2026)",
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/product-specific-contract-terms-and-eligibility-criteria-manual.pdf"
+    },
+    {
+     "kind": "updated",
+     "detail": "Section 2I - ForexClear Service - date changed to 17 November 2026 (was 17 August 2026)",
+     "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2i-forexclear-service.pdf"
+    }
+   ],
    "error": "",
    "http": {
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 81755,
+    "content_length": 81764,
     "content_type": "text/html",
     "final_url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-limited"
    },
@@ -44,25 +75,25 @@
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-procedures.pdf",
      "text": "FCM Procedures",
      "filename": "fcm-procedures.pdf",
-     "date": "17 August 2026"
+     "date": "17 November 2026"
     },
     {
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
      "text": "FCM Product Specific Contract Terms and Eligibility Criteria Manual",
      "filename": "fcm-product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
-     "date": "17 August 2026"
+     "date": "17 November 2026"
     },
     {
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/fcm-regulations.pdf",
      "text": "FCM Regulations",
      "filename": "fcm-regulations.pdf",
-     "date": "17 August 2026"
+     "date": "17 November 2026"
     },
     {
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/general-regulations.pdf",
      "text": "General Regulations",
      "filename": "general-regulations.pdf",
-     "date": "10 September 2026"
+     "date": "17 November 2026"
     },
     {
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/guaranteed-sponsored-clearing-procedures.pdf",
@@ -86,7 +117,7 @@
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
      "text": "Product Specific Contract Terms and Eligibility Criteria Manual",
      "filename": "product-specific-contract-terms-and-eligibility-criteria-manual.pdf",
-     "date": "17 August 2026"
+     "date": "17 November 2026"
     },
     {
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-1-clearing-member-and-dealer-status.pdf",
@@ -116,7 +147,7 @@
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2i-forexclear-service.pdf",
      "text": "Section 2I - ForexClear Service",
      "filename": "section-2i-forexclear-service.pdf",
-     "date": "17 August 2026"
+     "date": "17 November 2026"
     },
     {
      "url": "https://www.lseg.com/content/dam/post-trade/en_us/documents/lch/rulebooks/lch-ltd/section-2j-listed-interest-rates-service.pdf",
@@ -174,8 +205,8 @@
     }
    ],
    "doc_count": 24,
-   "latest_doc_date": "28 September 2026",
-   "change_detected_at": "2026-09-28T12:58:37+00:00"
+   "latest_doc_date": "17 November 2026",
+   "change_detected_at": "2026-11-17T15:31:20+00:00"
   },
   {
    "id": "LCH_SA_INDEX",
@@ -184,7 +215,7 @@
    "label": "LCH SA Rulebook Index",
    "url": "https://www.lseg.com/en/post-trade/clearing/clearing-resources/rulebooks/lch-sa",
    "method": "published_dates",
-   "checked_at": "2026-11-16T14:51:26+00:00",
+   "checked_at": "2026-11-17T15:31:20+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -300,7 +331,7 @@
    "label": "CME Securities Clearing Rulebook Page",
    "url": "https://www.cmegroup.com/rulebook/cmesc/",
    "method": "link_manifest",
-   "checked_at": "2026-11-16T14:51:26+00:00",
+   "checked_at": "2026-11-17T15:31:21+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -309,7 +340,7 @@
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 157338,
+    "content_length": 157341,
     "content_type": "text/html",
     "final_url": "https://www.cmegroup.com/rulebook/cmesc/"
    },
@@ -362,7 +393,7 @@
    "label": "CME Securities Clearing Rulebook (PDF)",
    "url": "https://www.cmegroup.com/rulebook/CMESC/CMESC%20Rulebook.pdf",
    "method": "content_hash",
-   "checked_at": "2026-11-16T14:51:26+00:00",
+   "checked_at": "2026-11-17T15:31:21+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -390,7 +421,7 @@
    "label": "CME Rule Filings",
    "url": "https://www.cmegroup.com/market-regulation/rule-filings.html",
    "method": "link_manifest",
-   "checked_at": "2026-11-16T14:51:27+00:00",
+   "checked_at": "2026-11-17T15:31:21+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -399,7 +430,7 @@
     "status": 200,
     "etag": "",
     "last_modified": "",
-    "content_length": 182966,
+    "content_length": 182969,
     "content_type": "text/html",
     "final_url": "https://www.cmegroup.com/market-regulation/rule-filings.html"
    },
@@ -566,7 +597,7 @@
    "label": "ICE Clear Europe Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_europe/rulebooks/rules/Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-11-16T14:51:27+00:00",
+   "checked_at": "2026-11-17T15:31:22+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -594,7 +625,7 @@
    "label": "ICE Clear Credit Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-11-16T14:51:27+00:00",
+   "checked_at": "2026-11-17T15:31:22+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -622,7 +653,7 @@
    "label": "ICE Clear Credit Treasury Clearing Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/clear_credit/ICE_Clear_Credit_Treasury_Clearing_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-11-16T14:51:27+00:00",
+   "checked_at": "2026-11-17T15:31:22+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -650,7 +681,7 @@
    "label": "ICE Clear US Rules (PDF)",
    "url": "https://www.ice.com/publicdocs/rulebooks/clear/ICE_Clear_US_Rules.pdf",
    "method": "content_hash",
-   "checked_at": "2026-11-16T14:51:27+00:00",
+   "checked_at": "2026-11-17T15:31:22+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -679,7 +710,7 @@
    "label": "ICE Clear Europe Regulation Page",
    "url": "https://www.ice.com/clear-europe/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-11-16T14:51:28+00:00",
+   "checked_at": "2026-11-17T15:31:23+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -687,7 +718,7 @@
    "http": {
     "status": 200,
     "etag": "",
-    "last_modified": "Fri, 13 Nov 2026 17:03:31 GMT",
+    "last_modified": "Fri, 13 Nov 2026 17:37:15 GMT",
     "content_length": 260950,
     "content_type": "text/html",
     "final_url": "https://www.ice.com/clear-europe/regulation"
@@ -885,7 +916,7 @@
    "label": "ICE Clear Credit Regulation Page",
    "url": "https://www.ice.com/clear-credit/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-11-16T14:51:28+00:00",
+   "checked_at": "2026-11-17T15:31:23+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -893,7 +924,7 @@
    "http": {
     "status": 200,
     "etag": "",
-    "last_modified": "Fri, 13 Nov 2026 17:38:10 GMT",
+    "last_modified": "Mon, 16 Nov 2026 18:34:19 GMT",
     "content_length": 148961,
     "content_type": "text/html",
     "final_url": "https://www.ice.com/clear-credit/regulation"
@@ -989,7 +1020,7 @@
    "label": "ICE Clear US Regulation Page",
    "url": "https://www.ice.com/clear-us/regulation",
    "method": "link_manifest",
-   "checked_at": "2026-11-16T14:51:28+00:00",
+   "checked_at": "2026-11-17T15:31:23+00:00",
    "ok": true,
    "changed": false,
    "changes": [],
@@ -997,7 +1028,7 @@
    "http": {
     "status": 200,
     "etag": "",
-    "last_modified": "Fri, 13 Nov 2026 16:58:21 GMT",
+    "last_modified": "Fri, 13 Nov 2026 16:34:56 GMT",
     "content_length": 122580,
     "content_type": "text/html",
     "final_url": "https://www.ice.com/clear-us/regulation"
